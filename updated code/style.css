@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #202020;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    width: 98%;
+    height: 96vh;
+    margin: 1vh auto;
+    display: flex;
+}
+
+.intro {
+    width: 58%;
+    background: #09100d;
+    color: white;
+    padding: 32px;
+    position: relative;
+}
+
+.brand {
+    font-size: 11px;
+}
+
+.brand b {
+    width: 12px;
+    height: 12px;
+    background: #00ff2f;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.introText {
+    position: absolute;
+    top: 31%;
+}
+
+.introText h1,
+.buyerText h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    line-height: .95;
+    margin: 0;
+    font-size: 42px;
+}
+
+.introText p {
+    color: #9ba29e;
+    width: 480px;
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 22px;
+}
+
+.steps {
+    position: absolute;
+    bottom: 30px;
+    left: 32px;
+    right: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7px;
+    color: #00ff2f;
+}
+
+.login {
+    width: 42%;
+    background: #f4f1eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox {
+    width: 330px;
+}
+
+.topText {
+    color: #888;
+    font-size: 7px;
+    margin-bottom: 17px;
+}
+
+.login h2,
+.registerBox h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: .95;
+    margin: 0;
+}
+
+.help {
+    color: #777;
+    font-size: 8px;
+    margin: 12px 0;
+}
+
+.choice {
+    display: flex;
+}
+
+.choice a {
+    padding: 7px 12px;
+    border: 1px solid #777;
+    background: white;
+    color: #222;
+    text-decoration: none;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+.choice .selected {
+    background: #173c29;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 7px;
+    color: #777;
+    margin: 9px 0 4px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    height: 25px;
+    border: 1px solid #888;
+    background: transparent;
+    padding: 5px;
+    font-size: 8px;
+}
+
+button {
+    width: fit-content;
+    margin-top: 12px;
+    padding: 8px 11px;
+    background: #173c29;
+    color: white;
+    border: 0;
+    font-size: 7px;
+    font-weight: bold;
+    box-shadow: 4px 4px #092217;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d5d2cc;
+    margin-top: 20px;
+}
+
+.bottomText {
+    text-align: center;
+    color: #888;
+    font-size: 7px;
+    margin-top: 10px;
+}
+
+.buyerSide {
+    width: 39%;
+}
+
+.buyerText {
+    position: absolute;
+    top: 40%;
+    left: 32px;
+}
+
+.buyerText h1 {
+    font-size: 29px;
+}
+
+.buyerText p {
+    color: #9ba29e;
+    width: 250px;
+    font-size: 9px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.online {
+    position: absolute;
+    bottom: 28px;
+    color: #00ff2f;
+    font-size: 7px;
+}
+
+.buyerPage {
+    width: 61%;
+    align-items: flex-start;
+    padding-top: 27px;
+}
+
+.registerBox {
+    width: 410px;
+}
+
+.registerBox form input {
+    width: 165px;
+}
+
+.agree {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 7px;
+    color: #888;
+}
+
+.agree input {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+

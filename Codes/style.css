@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1d1d1d;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.page{
+    width: 98%;
+    min-height: 96vh;
+    margin: 1vh auto;
+    display: flex;
+}
+
+.left {
+    width: 58%;
+    background-color: #080f0c;
+    color: white;
+    padding: 42px 48px 32px 48px;
+    position: relative;
+}
+
+.right {
+    width: 42%;
+    background-color: #f3f0ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.logo {
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff2f;
+    display: inline-block;
+}
+
+.left-content{
+    position: absolute;
+    left: 48px;
+    top: 31%;
+    width: 80%;
+}
+
+.left-content h1{
+    font-family: Georgia, serif;
+    font-size: 43px;
+    font-weight: normal;
+    line-height: 0.96;
+    letter-spacing: -1px;
+}
+
+.left-content p {
+    margin-top: 25px;
+    width: 75%;
+    color: #9da6a1;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.steps {
+    position: absolute;
+    bottom: 30px;
+    left: 48px;
+    right: 48px;
+    display: flex;
+    justify-content: space-between;
+    color: #00ff2f;
+    font-size: 7px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+.small-title {
+    color: #888;
+    font-size: 7px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.form-box h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 0.95;
+}
+
+.subtext {
+    margin-top: 13px;
+    margin-bottom: 14px;
+    color: #777;
+    font-size: 8px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 13px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #222;
+    background-color: white;
+    border: 1px solid #777;
+    padding: 7px 12px;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+.tabs .active {
+    background-color: #173e29;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #777;
+    font-size: 7px;
+    margin: 8px 0 5px 0;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    height: 25px;
+    border: 1px solid #888;
+    background-color: transparent;
+    padding: 5px 8px;
+    font-size: 8px;
+}
+
+button {
+    width: fit-content;
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #173e29;
+    color: white;
+    font-size: 7px;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px #0a2417;
+}
+
+.line {
+    height: 1px;
+    background-color: #d5d1c9;
+    margin-top: 20px;
+}
+
+.register-text,
+.login-text {
+    text-align: center;
+    color: #888;
+    font-size: 7px;
+    margin-top: 12px;
+}
+
+.buyer-left {
+    width: 39%;
+}
+
+.buyer-right {
+    width: 61%;
+    align-items: flex-start;
+    padding-top: 28px;
+}
+
+.buyer-message {
+    top: 40%;
+    left: 48px;
+    width: 75%;
+}
+
+.buyer-message h1 {
+    font-size: 29px;
+}
+
+.buyer-message p {
+    width: 80%;
+    margin-top: 17px;
+}
+
+.online {
+    position: absolute;
+    bottom: 32px;
+    left: 48px;
+    color: #00ff2f;
+    font-size: 7px;
+}
+
+.online span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #00ff2f;
+    border-radius: 50%;
+}
+
+.buyer-form {
+    max-width: 410px;
+}
+
+.buyer-form h2 {
+    font-size: 25px;
+}
+
+.buyer-form label {
+    margin-top: 9px;
+}
+
+.buyer-form input[type="text"],
+.buyer-form input[type="email"],
+.buyer-form input[type="password"] {
+    width: 165px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.check input {
+    width: 10px;
+    height: 10px;
+}
+
+.check span {
+    color: #888;
+    font-size: 7px;
+}
+
+.buyer-form button {
+    margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .left,
+    .right,
+    .buyer-left,
+    .buyer-right {
+        width: 100%;
+    }
+
+    .left {
+        min-height: 500px;
+    }
+
+    .right {
+        min-height: 500px;
+    }
+
+    .left-content {
+        top: 25%;
+    }
+}
