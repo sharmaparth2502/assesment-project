@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #101411;
+    color: #f1f1e8;
+    font-family: Arial, sans-serif;
+}
+
+.top {
+    height: 70px;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #303630;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav a {
+    color: #d7ddd2;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 13px;
+}
+
+.page {
+    width: 1100px;
+    margin: 45px auto;
+}
+
+.small {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.cards {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    padding: 25px;
+    border: 1px solid #414941;
+    background: #171c18;
+}
+
+.card p {
+    color: #aeb7ad;
+}
+
+.card h2 {
+    font-size: 26px;
+}
+
+.card span {
+    color: #cbd8bf;
+}
+
+.section {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #414941;
+    background: #171c18;
+}
+
+.graph {
+    height: 220px;
+    margin-top: 25px;
+    border-bottom: 1px solid #687067;
+    border-left: 1px solid #687067;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    height: 3px;
+    background: #dce7d0;
+}
+
+.one {
+    width: 20%;
+    left: 5%;
+    top: 65%;
+    transform: rotate(-15deg);
+}
+
+.two {
+    width: 25%;
+    left: 24%;
+    top: 55%;
+    transform: rotate(18deg);
+}
+
+.three {
+    width: 25%;
+    left: 47%;
+    top: 45%;
+    transform: rotate(-10deg);
+}
+
+.four {
+    width: 25%;
+    left: 70%;
+    top: 35%;
+    transform: rotate(15deg);
+}
