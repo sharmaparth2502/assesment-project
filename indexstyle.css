@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.top {
+.top{
     height: 70px;
     padding: 0 60px;
     display: flex;
@@ -18,19 +18,19 @@ body {
     border-bottom: 1px solid #303630;
 }
 
-.logo {
+.logo{
     font-size: 28px;
     font-weight: bold;
 }
 
-.nav a {
+.nav a{
     color: #d7ddd2;
     text-decoration: none;
     margin-left: 30px;
     font-size: 13px;
 }
 
-.login-page {
+.login-page{
     width: 100%;
     min-height: 620px;
     display: flex;
@@ -38,34 +38,34 @@ body {
     align-items: center;
 }
 
-.login-box {
+.login-box{
     width: 480px;
     padding: 45px;
     border: 1px solid #4a5149;
     background: #171c18;
 }
 
-.small {
+.small{
     font-size: 12px;
     letter-spacing: 2px;
 }
 
-h1 {
+h1{
     font-size: 38px;
     margin: 20px 0 10px;
 }
 
-.login-box p {
+.login-box p{
     color: #b8c0b5;
 }
 
-label {
+label{
     display: block;
     margin-top: 22px;
     margin-bottom: 8px;
 }
 
-input {
+input{
     width: 100%;
     padding: 13px;
     background: #0e120f;
@@ -73,7 +73,7 @@ input {
     color: white;
 }
 
-button {
+button{
     width: 100%;
     margin-top: 25px;
     padding: 14px;
@@ -84,11 +84,11 @@ button {
     cursor: pointer;
 }
 
-.register {
+.register{
     margin-top: 25px;
     font-size: 14px;
 }
 
-.register a {
+.register a{
     color: #dce7d0;
 }
