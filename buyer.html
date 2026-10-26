@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CABO - Buyer Registration</title>
     <link rel="stylesheet" href="buyerstyle.css">
@@ -7,74 +8,69 @@
 
 <body>
 
-<div class="top">
+    <div class="top">
+        <div class="logo">CABO</div>
 
-    <div class="logo">CABO</div>
-
-    <div class="nav">
-        <a href="index.html">SELLER</a>
-        <a href="buyer.html">BUYER</a>
+        <div class="nav">
+            <a href="index.html">SELLER</a>
+            <a href="buyer.html">BUYER</a>
+        </div>
     </div>
 
-</div>
+    <div class="page">
+        <div class="form-box">
 
-<div class="page">
+            <p class="small">CABO CREATE BUYER ACCOUNT</p>
 
-    <div class="form-box">
+            <h1>PROCURE VERIFIED CLIMATE IMPACT AT THE SOURCE.</h1>
 
-        <p class="small">CABO CREATE BUYER ACCOUNT</p>
+            <p>
+                Transparent rooftop-solar inventory,
+                traceable telemetry and audit-ready settlement.
+            </p>
 
-        <h1>PROCURE VERIFIED CLIMATE IMPACT AT THE SOURCE.</h1>
+            <form onsubmit="alert('Registration form submitted!'); return false;">
 
-        <p>
-            Transparent rooftop-solar inventory,
-            traceable telemetry and audit-ready settlement.
-        </p>
+                <label>Organisation</label>
+                <input type="text" placeholder="Company name" required>
 
-        <form>
+                <label>Work Email</label>
+                <input type="email" value="buyer@cabo.demo" required>
 
-            <label>Organisation</label>
-            <input type="text" placeholder="Company name">
+                <label>Contact</label>
+                <input type="text" value="Aarav Mehta" required>
 
-            <label>Work Email</label>
-            <input type="email" value="buyer@cabo.demo">
+                <label>Password</label>
+                <input type="password" value="demo123" minlength="6" required>
 
-            <label>Contact</label>
-            <input type="text" value="Aarav Mehta">
+                <label>Procurement Target</label>
+                <input type="text" value="10,000 tCO₂e" required>
 
-            <label>Password</label>
-            <input type="password" value="demo123">
+                <label>Company Type</label>
+                <select required>
+                    <option value="Corporate buyer">Corporate buyer</option>
+                    <option value="Institution">Institution</option>
+                    <option value="Other">Other</option>
+                </select>
 
-            <label>Procurement Target</label>
-            <input type="text" value="10,000 tCO₂e">
+                <div class="check">
+                    <input type="checkbox" required>
+                    <span>I agree to the CABO terms and conditions.</span>
+                </div>
 
-            <label>Company Type</label>
+                <button type="submit">
+                    REGISTER ACCOUNT →
+                </button>
 
-            <select>
-                <option>Corporate buyer</option>
-                <option>Institution</option>
-                <option>Other</option>
-            </select>
+            </form>
 
-            <div class="check">
-                <input type="checkbox">
-                <span>I agree to the CABO terms and conditions.</span>
-            </div>
+            <p class="bottom">
+                Already registered?
+                <a href="index.html">Login here</a>
+            </p>
 
-            <button type="button" onclick="window.location.href='index.html'">
-                REGISTER ACCOUNT →
-            </button>
-
-        </form>
-
-        <p class="bottom">
-            Already registered?
-            <a href="index.html">Login here</a>
-        </p>
-
+        </div>
     </div>
-
-</div>
 
 </body>
 </html>
