@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>CABO - Buyer Registration</title>
     <link rel="stylesheet" href="buyerstyle.css">
@@ -17,60 +17,88 @@
         </div>
     </div>
 
-    <div class="page">
-        <div class="form-box">
+    <div class="register-page">
+        <div class="register-box">
 
-            <p class="small">CABO CREATE BUYER ACCOUNT</p>
+            <p class="small">CABO NETWORK / BUYER ACCESS</p>
 
-            <h1>PROCURE VERIFIED CLIMATE IMPACT AT THE SOURCE.</h1>
+            <h1>BUYER REGISTRATION</h1>
 
-            <p>
-                Transparent rooftop-solar inventory,
-                traceable telemetry and audit-ready settlement.
-            </p>
+            <p>Register your organisation to explore carbon credits.</p>
 
-            <form onsubmit="alert('Registration form submitted!'); return false;">
+            <form id="buyerForm">
 
                 <label>Organisation</label>
-                <input type="text" placeholder="Company name" required>
+                <input type="text" id="company"
+                       placeholder="Company name" required>
 
                 <label>Work Email</label>
-                <input type="email" value="buyer@cabo.demo" required>
+                <input type="email" id="email"
+                       value="buyer@cabo.demo" required>
 
                 <label>Contact</label>
-                <input type="text" value="Aarav Mehta" required>
+                <input type="text" id="contact"
+                       value="Aarav Mehta" required>
 
                 <label>Password</label>
-                <input type="password" value="demo123" minlength="6" required>
+                <input type="password" id="password"
+                       minlength="6" required>
 
                 <label>Procurement Target</label>
-                <input type="text" value="10,000 tCO₂e" required>
+                <input type="text" id="target"
+                       value="10,000 tCO₂e" required>
 
                 <label>Company Type</label>
-                <select required>
-                    <option value="Corporate buyer">Corporate buyer</option>
-                    <option value="Institution">Institution</option>
+                <select id="companyType" required>
+                    <option value="">Select company type</option>
+                    <option value="Private Company">Private Company</option>
+                    <option value="Public Company">Public Company</option>
+                    <option value="Startup">Startup</option>
                     <option value="Other">Other</option>
                 </select>
 
                 <div class="check">
-                    <input type="checkbox" required>
+                    <input type="checkbox" id="terms" required>
                     <span>I agree to the CABO terms and conditions.</span>
                 </div>
 
-                <button type="submit">
-                    REGISTER ACCOUNT →
-                </button>
+                <button type="submit">REGISTER ACCOUNT →</button>
 
             </form>
 
-            <p class="bottom">
+            <p class="register">
                 Already registered?
-                <a href="index.html">Login here</a>
+                <a href="index.html">Go to Seller Login</a>
             </p>
 
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById("buyerForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const buyer = {
+                company: document.getElementById("company").value,
+                email: document.getElementById("email").value,
+                contact: document.getElementById("contact").value,
+                target: document.getElementById("target").value,
+                companyType: document.getElementById("companyType").value
+            };
+
+            let buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+
+            buyers.push(buyer);
+
+            localStorage.setItem("buyers", JSON.stringify(buyers));
+
+            alert("Buyer registration submitted successfully!");
+
+            form.reset();
+        });
+    </script>
 
 </body>
 </html>
