@@ -21,24 +21,38 @@
 
         <tbody id="buyerTable"></tbody>
     </table>
-    <script>
-        const buyers = JSON.parse(localStorage.getItem("buyers")) || [];
-        const table = document.getElementById("buyerTable");
 
-        buyers.forEach(function(buyer) {
-            const row = document.createElement("tr");
+<script>
+    const buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+    const table = document.getElementById("buyerTable");
 
-            row.innerHTML = `
-                <td>${buyer.company}</td>
-                <td>${buyer.email}</td>
-                <td>${buyer.contact}</td>
-                <td>${buyer.target}</td>
-                <td>${buyer.companyType}</td>
-            `;
+    buyers.forEach(function(buyer) {
+        const row = document.createElement("tr");
 
-            table.appendChild(row);
-        });
-    </script>    
+        const company = document.createElement("td");
+        company.textContent = buyer.company;
+        row.appendChild(company);
+
+        const email = document.createElement("td");
+        email.textContent = buyer.email;
+        row.appendChild(email);
+
+        const contact = document.createElement("td");
+        contact.textContent = buyer.contact;
+        row.appendChild(contact);
+
+        const target = document.createElement("td");
+        target.textContent = buyer.target;
+        row.appendChild(target);
+
+        const companyType = document.createElement("td");
+        companyType.textContent = buyer.companyType;
+        row.appendChild(companyType);
+
+        table.appendChild(row);
+    });
+</script>
+  
 
 </body>
 </html>
