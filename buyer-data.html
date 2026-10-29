@@ -21,6 +21,24 @@
 
         <tbody id="buyerTable"></tbody>
     </table>
+    <script>
+        const buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+        const table = document.getElementById("buyerTable");
+
+        buyers.forEach(function(buyer) {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${buyer.company}</td>
+                <td>${buyer.email}</td>
+                <td>${buyer.contact}</td>
+                <td>${buyer.target}</td>
+                <td>${buyer.companyType}</td>
+            `;
+
+            table.appendChild(row);
+        });
+    </script>    
 
 </body>
 </html>
