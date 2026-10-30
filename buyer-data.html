@@ -53,6 +53,11 @@
         table.appendChild(row);
         
     });
+        document.getElementById("clearData").addEventListener("click", function() {
+        localStorage.removeItem("buyers");
+        table.innerHTML = "";
+        alert("Buyer data cleared successfully!");
+    });
 </script>
   
 
