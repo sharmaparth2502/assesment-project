@@ -85,12 +85,22 @@
                 target: document.getElementById("target").value,
                 companyType: document.getElementById("companyType").value
             };
-
+            
             let buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+
+            let existingBuyer = buyers.find(function(item) {
+                return item.email.toLowerCase() === buyer.email.toLowerCase();
+            });
+
+            if (existingBuyer) {
+                alert("This email is already registered!");
+                return;
+            }
 
             buyers.push(buyer);
 
             localStorage.setItem("buyers", JSON.stringify(buyers));
+
 
             alert("Buyer registration submitted successfully!");
 
