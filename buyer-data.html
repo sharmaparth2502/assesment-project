@@ -14,7 +14,8 @@
             <tr>
                 <th>Organisation</th>
                 <th>Email</th>
-                <th>Contact</th>
+                <th>Contact Person</th>
+                <th>Phone Number</th>
                 <th>Target</th>
                 <th>Company Type</th>
             </tr>
@@ -41,6 +42,10 @@
         const contact = document.createElement("td");
         contact.textContent = buyer.contact;
         row.appendChild(contact);
+        
+        const phone = document.createElement("td");
+        phone.textContent = buyer.phone;
+        row.appendChild(phone);
 
         const target = document.createElement("td");
         target.textContent = buyer.target;
