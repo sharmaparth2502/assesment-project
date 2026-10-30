@@ -36,7 +36,14 @@
 
                 <label>Contact Person Name</label>
                 <input type="text" id="contact"
-                       value="Aarav Mehta" required>
+                       placeholder="Enter contact person name" required>
+
+                <label>Phone Number</label>
+                <input type="tel" id="phone"
+                    placeholder="Enter 10-digit mobile number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
 
                 <label>Password</label>
                 <input type="password" id="password"
@@ -82,6 +89,7 @@
                 company: document.getElementById("company").value,
                 email: document.getElementById("email").value,
                 contact: document.getElementById("contact").value,
+                phone: document.getElementById("phone").value,
                 target: document.getElementById("target").value,
                 companyType: document.getElementById("companyType").value
             };
