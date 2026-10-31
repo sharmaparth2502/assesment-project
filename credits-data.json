@@ -1,0 +1,25 @@
+{
+    "credits": [
+        {
+            "id": 1,
+            "source": "Rooftop Solar Project A",
+            "location": "Punjab, India",
+            "available": "500 CC",
+            "price": "₹850 / CC"
+        },
+        {
+            "id": 2,
+            "source": "Rooftop Solar Project B",
+            "location": "Haryana, India",
+            "available": "750 CC",
+            "price": "₹820 / CC"
+        },
+        {
+            "id": 3,
+            "source": "Rooftop Solar Project C",
+            "location": "Delhi, India",
+            "available": "300 CC",
+            "price": "₹900 / CC"
+        }
+    ]
+}
