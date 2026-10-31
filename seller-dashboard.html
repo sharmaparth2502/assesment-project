@@ -88,5 +88,22 @@
 
 </div>
 
+<script>
+    fetch("solar-data.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            document.getElementById("solarOutput").textContent = data.solarOutput;
+            document.getElementById("todaysEnergy").textContent = data.todaysEnergy;
+            document.getElementById("co2Avoided").textContent = data.co2Avoided;
+            document.getElementById("dailyCredits").textContent = data.dailyCredits;
+            document.getElementById("monthToDate").textContent = data.monthToDate;
+        })
+        .catch(function(error) {
+            console.log("Error loading solar data:", error);
+        });
+</script>
+
 </body>
 </html>
