@@ -178,14 +178,8 @@
 
                             transactions.push(purchase);
 
-                            localStorage.setItem(
-                                "buyerTransactions",
-                                JSON.stringify(
-                                    JSON.parse(localStorage.getItem("buyerTransactions")) || []
-                                )
-                            );
-
                             let allTransactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
+
                             allTransactions.push(purchase);
 
                             localStorage.setItem("buyerTransactions", JSON.stringify(allTransactions));
