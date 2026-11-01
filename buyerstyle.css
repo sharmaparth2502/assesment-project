@@ -30,15 +30,18 @@ body {
     font-size: 13px;
 }
 
-.page {
-    width: 800px;
-    margin: 50px auto;
+.register-page {
+    width: 100%;
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
 }
 
-.form-box {
+.register-box {
+    width: 800px;
+    padding: 40px;
     border: 1px solid #4a5149;
     background: #171c18;
-    padding: 40px;
 }
 
 .small {
@@ -93,7 +96,7 @@ button {
     cursor: pointer;
 }
 
-.bottom {
+.register {
     font-size: 14px;
     margin-top: 20px;
 }
