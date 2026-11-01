@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>CABO - Buyer Dashboard</title>
@@ -10,7 +11,7 @@
         <div class="logo">CABO</div>
 
         <div class="nav">
-            <a href="index.html">SELLER</a>
+            <a href="index.html">LOGIN</a>
             <a href="buyer.html">BUYER</a>
             <a href="buyer-data.html">BUYER DATA</a>
         </div>
@@ -25,6 +26,7 @@
         <p>Welcome, <span id="buyerName">Buyer</span></p>
 
         <div class="summary">
+
             <div class="box">
                 <p>Available Credits</p>
                 <h2 id="availableCredits">0 CC</h2>
@@ -39,6 +41,7 @@
                 <p>Organisation</p>
                 <h2 id="companyName">Not available</h2>
             </div>
+
         </div>
 
         <h2>AVAILABLE CARBON CREDITS</h2>
@@ -54,8 +57,7 @@
                 </tr>
             </thead>
 
-            <tbody id="creditList">
-            </tbody>
+            <tbody id="creditList"></tbody>
         </table>
 
         <h2>TRANSACTION HISTORY</h2>
@@ -69,125 +71,160 @@
                 </tr>
             </thead>
 
-            <tbody id="transactionList">
-            </tbody>
+            <tbody id="transactionList"></tbody>
         </table>
 
     </div>
 
     <script>
 
-        let buyers = JSON.parse(localStorage.getItem("buyers")) || [];
-        let transactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
+        let buyer = JSON.parse(localStorage.getItem("loggedInBuyer"));
 
-        let buyer = buyers[buyers.length - 1];
+        if (!buyer) {
+            window.location.href = "index.html";
+        }
 
-        if (buyer) {
+        else {
+
             document.getElementById("buyerName").textContent = buyer.contact;
             document.getElementById("companyName").textContent = buyer.company;
-        }
 
-        function showTransactions() {
+            let transactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
 
-            let transactionList = document.getElementById("transactionList");
-            transactionList.innerHTML = "";
-
-            let total = 0;
-
-            transactions.forEach(function(item) {
-
-                let row = document.createElement("tr");
-
-                let project = document.createElement("td");
-                project.textContent = item.source;
-
-                let credits = document.createElement("td");
-                credits.textContent = item.credits;
-
-                let status = document.createElement("td");
-                status.textContent = "Demo Purchase";
-
-                row.appendChild(project);
-                row.appendChild(credits);
-                row.appendChild(status);
-
-                transactionList.appendChild(row);
-
-                total = total + item.credits;
-
+            transactions = transactions.filter(function(item) {
+                return item.buyerEmail === buyer.email;
             });
 
-            document.getElementById("purchasedCredits").textContent = total + " CC";
-        }
+            function showTransactions() {
 
-        fetch("credits-data.json")
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
+                let transactionList = document.getElementById("transactionList");
+                transactionList.innerHTML = "";
 
-                let creditList = document.getElementById("creditList");
-                let totalCredits = 0;
+                let total = 0;
 
-                data.credits.forEach(function(item) {
+                transactions.forEach(function(item) {
 
                     let row = document.createElement("tr");
 
-                    let source = document.createElement("td");
-                    source.textContent = item.source;
+                    let project = document.createElement("td");
+                    project.textContent = item.source;
 
-                    let location = document.createElement("td");
-                    location.textContent = item.location;
+                    let credits = document.createElement("td");
+                    credits.textContent = item.credits + " CC";
 
-                    let available = document.createElement("td");
-                    available.textContent = item.available;
+                    let status = document.createElement("td");
+                    status.textContent = "Demo Purchase";
 
-                    let price = document.createElement("td");
-                    price.textContent = item.price;
+                    row.appendChild(project);
+                    row.appendChild(credits);
+                    row.appendChild(status);
 
-                    let action = document.createElement("td");
-                    let buyButton = document.createElement("button");
+                    transactionList.appendChild(row);
 
-                    buyButton.textContent = "Buy";
-                    buyButton.addEventListener("click", function() {
-
-                        let purchase = {
-                            source: item.source,
-                            credits: 10
-                        };
-
-                        transactions.push(purchase);
-
-                        localStorage.setItem("buyerTransactions", JSON.stringify(transactions));
-
-                        alert("Demo purchase of 10 credits recorded!");
-
-                        showTransactions();
-
-                    });
-
-                    action.appendChild(buyButton);
-
-                    row.appendChild(source);
-                    row.appendChild(location);
-                    row.appendChild(available);
-                    row.appendChild(price);
-                    row.appendChild(action);
-
-                    creditList.appendChild(row);
-
-                    totalCredits = totalCredits + parseInt(item.available);
+                    total = total + item.credits;
 
                 });
 
-                document.getElementById("availableCredits").textContent = totalCredits + " CC";
+                document.getElementById("purchasedCredits").textContent = total + " CC";
+            }
 
-            })
-            .catch(function(error) {
-                console.log("Error loading credit data:", error);
-            });
+            fetch("credits-data.json")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
 
-        showTransactions();
+                    let creditList = document.getElementById("creditList");
+                    let totalCredits = 0;
+
+                    data.credits.forEach(function(item) {
+
+                        let row = document.createElement("tr");
+
+                        let source = document.createElement("td");
+                        source.textContent = item.source;
+
+                        let location = document.createElement("td");
+                        location.textContent = item.location;
+
+                        let available = document.createElement("td");
+                        available.textContent = item.available;
+
+                        let price = document.createElement("td");
+                        price.textContent = item.price;
+
+                        let action = document.createElement("td");
+                        let buyButton = document.createElement("button");
+
+                        buyButton.textContent = "Buy";
+
+                        buyButton.addEventListener("click", function() {
+
+                            let remaining = parseInt(item.available);
+
+                            if (remaining < 10) {
+                                alert("Not enough credits available!");
+                                return;
+                            }
+
+                            item.available = (remaining - 10) + " CC";
+                            available.textContent = item.available;
+
+                            let purchase = {
+                                source: item.source,
+                                credits: 10,
+                                buyerEmail: buyer.email
+                            };
+
+                            transactions.push(purchase);
+
+                            localStorage.setItem(
+                                "buyerTransactions",
+                                JSON.stringify(
+                                    JSON.parse(localStorage.getItem("buyerTransactions")) || []
+                                )
+                            );
+
+                            let allTransactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
+                            allTransactions.push(purchase);
+
+                            localStorage.setItem("buyerTransactions", JSON.stringify(allTransactions));
+
+                            alert("Demo purchase of 10 credits recorded!");
+
+                            showTransactions();
+
+                            document.getElementById("availableCredits").textContent =
+                                (totalCredits - 10) + " CC";
+
+                            totalCredits = totalCredits - 10;
+
+                        });
+
+                        action.appendChild(buyButton);
+
+                        row.appendChild(source);
+                        row.appendChild(location);
+                        row.appendChild(available);
+                        row.appendChild(price);
+                        row.appendChild(action);
+
+                        creditList.appendChild(row);
+
+                        totalCredits = totalCredits + parseInt(item.available);
+
+                    });
+
+                    document.getElementById("availableCredits").textContent = totalCredits + " CC";
+
+                })
+                .catch(function(error) {
+                    console.log("Error loading credit data:", error);
+                });
+
+            showTransactions();
+
+        }
 
     </script>
 
