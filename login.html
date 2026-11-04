@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login - CABO Secure Access</title>
+</head>
+<body class="login-main" style="background-color: #0d120e; padding: 2em 1em;">
+
+    <!-- Login Container -->
+    <div class="form-container login-container" style="margin: auto;">
+        
+        <div style="text-align: center; margin-bottom: 1.5em;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 0.5em;">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo" height="48">
+                <span id="logo-text" style="font-size: 1.8em;">CABO</span>
+            </a>
+            <span class="div-subtitle-tag">Secure Portal Gateway</span>
+            <p style="color: #9cb098; font-size: 0.9em;">Turning distributed solar into verified climate impact.</p>
+        </div>
+
+        <!-- Evaluation Demo Credentials Helper Box -->
+        <div style="background: #111812; border: 1px dashed #344837; border-radius: 8px; padding: 1em; margin-bottom: 1.5em; font-size: 0.82em; color: #b5c4b2;">
+            <strong style="color: #4ade80; display: block; margin-bottom: 4px;">Evaluation Demo Accounts:</strong>
+            <div>• <strong>Buyer Access:</strong> <code>buyer@cabo.demo</code> / <code>demo123</code></div>
+            <div>• <strong>Seller Monitor:</strong> <code>seller@cabo.demo</code> / <code>demo123</code></div>
+            <div>(Or login with any registered buyer account)</div>
+        </div>
+
+        <!-- Inline Feedback Message -->
+        <div id="message" class="form-feedback"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Work Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Account Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5em;">
+                <button type="submit" class="button-primary full-width-button">
+                    SECURE LOGIN →
+                </button>
+            </div>
+        </form>
+
+        <p class="form-footer-text">
+            New to CABO? <a href="buyer.html">Register an Organisation</a>
+        </p>
+
+        <div style="text-align: center; margin-top: 1.5em; padding-top: 1em; border-top: 1px solid #222e24;">
+            <a href="index.html" style="color: #8fa08c; text-decoration: none; font-size: 0.85em;">
+                ← Back to Homepage
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Login Script -->
+    <script src="js/login.js"></script>
+
+</body>
+</html>
+

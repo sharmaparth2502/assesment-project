@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Weekly Telemetry & Audit Report - CABO</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html" class="active-page">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="seller-dashboard.html" class="button-secondary">Seller Monitor</a>
+                <a href="settlement.html" class="button-primary">Settlement</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <div style="margin-bottom: 2em; padding-bottom: 1.5em; border-bottom: 1px solid #233025; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1em;">
+                <div>
+                    <span class="div-subtitle-tag">02 / WEEKLY TELEMETRY AUDIT</span>
+                    <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.2em; color: #ffffff;">7-Day Node Clearing Report</h1>
+                    <p style="color: #9cb098;">Audit Cycle: 07 — 13 SEP 2026 | Assigned Node: MP-0247 (Rooftop Inverter)</p>
+                </div>
+                <div>
+                    <span class="badge-verified" style="font-size: 0.9em; padding: 6px 14px;">
+                        ✓ 100% Cryptographic Checksum Passed
+                    </span>
+                </div>
+            </div>
+
+            <!-- Stats Boxes -->
+            <div class="metric-cards-grid">
+                <div class="metric-card">
+                    <p>Audit Concordance</p>
+                    <h2 style="color: #4ade80;">99.8%</h2>
+                </div>
+                <div class="metric-card">
+                    <p>7-Day Generation</p>
+                    <h2>172.4 kWh</h2>
+                </div>
+                <div class="metric-card">
+                    <p>CO₂ Avoided</p>
+                    <h2>130.1 kg</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Issuable Carbon Credits</p>
+                    <h2 style="color: #4ade80;">0.130 CC</h2>
+                </div>
+            </div>
+
+            <!-- 7-Day Audit Table -->
+            <div style="margin-top: 3em;">
+                <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5em; color: #ffffff; margin-bottom: 0.8em;">
+                    Daily Verified Telemetry Breakdown
+                </h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date & Cycle</th>
+                                <th>Clean Energy Output</th>
+                                <th>Avoided CO₂ Equivalent</th>
+                                <th>Inverter Run Time</th>
+                                <th>Verification Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>07 Sep 2026</td>
+                                <td>24.2 kWh</td>
+                                <td>18.3 kg</td>
+                                <td>8.2 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>08 Sep 2026</td>
+                                <td>25.1 kWh</td>
+                                <td>19.0 kg</td>
+                                <td>8.5 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>09 Sep 2026</td>
+                                <td>23.7 kWh</td>
+                                <td>17.9 kg</td>
+                                <td>8.1 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>10 Sep 2026</td>
+                                <td>24.8 kWh</td>
+                                <td>18.7 kg</td>
+                                <td>8.4 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>11 Sep 2026</td>
+                                <td>25.0 kWh</td>
+                                <td>18.9 kg</td>
+                                <td>8.6 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>12 Sep 2026</td>
+                                <td>24.6 kWh</td>
+                                <td>18.6 kg</td>
+                                <td>8.3 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                            <tr>
+                                <td>13 Sep 2026</td>
+                                <td>25.0 kWh</td>
+                                <td>18.7 kg</td>
+                                <td>8.4 hrs</td>
+                                <td><span class="badge-verified">VERIFIED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Technical Checksum & Gateway Details -->
+            <div style="background: #151c16; border: 1px solid #263328; border-radius: 12px; padding: 2em; margin-bottom: 3.5em;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em;">
+                    <div>
+                        <h4 style="color: #4ade80; font-family: 'Poppins', sans-serif; font-size: 1.1em; margin-bottom: 0.3em;">
+                            Tamper-Proof Gateway Hash
+                        </h4>
+                        <code style="color: #9cb098; font-size: 0.9em; word-break: break-all;">
+                            SHA256: 8f4b23c91a0e8d774f1b203c9d28a47814bfa4d86b9e248b1d4289065ff1c390
+                        </code>
+                    </div>
+                    <div>
+                        <a href="settlement.html" class="button-primary">
+                            Proceed to Weekly Settlement →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Tata Power Renewable ESG",
+    "email": "esg@tatapower.demo",
+    "contact": "Vikram Sethi",
+    "phone": "9812345678",
+    "target": "25,000 tCO₂e",
+    "companyType": "Public Company",
+    "registeredAt": "2026-10-15"
+  },
+  {
+    "company": "Infosys EcoVentures",
+    "email": "sustainability@infosys.demo",
+    "contact": "Ananya Roy",
+    "phone": "9876543210",
+    "target": "10,000 tCO₂e",
+    "companyType": "Public Company",
+    "registeredAt": "2026-10-22"
+  },
+  {
+    "company": "CleanPulse Mobility Corp",
+    "email": "procure@cleanpulse.demo",
+    "contact": "Rohan Mehra",
+    "phone": "9123456789",
+    "target": "5,000 tCO₂e",
+    "companyType": "Startup",
+    "registeredAt": "2026-11-01"
+  }
+]
+

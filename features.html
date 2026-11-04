@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Features - CABO Network Architecture</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html" class="active-page">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="button-secondary">Login</a>
+                <a href="buyer.html" class="button-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <!-- Features Title Div -->
+        <div class="div-title">
+            <span class="div-subtitle-tag">Network Architecture</span>
+            <h2>Our Technological Advantages</h2>
+            <p>Explore the engineering pillars behind CABO's decentralized rooftop solar aggregation and verified carbon settlement protocol.</p>
+        </div>
+
+        <!-- Dynamic Features Grid (Populated from data/features.json via js/features.js) -->
+        <div class="features-grid">
+            <!-- Dynamic cards will be loaded here by JavaScript fetch() -->
+        </div>
+
+        <hr>
+
+        <!-- Visual Telemetry Highlights -->
+        <div class="page-container">
+            <div style="display: flex; flex-wrap: wrap; gap: 3em; align-items: center; margin-bottom: 4em;">
+                <div style="flex: 1; min-width: 320px;">
+                    <span class="div-subtitle-tag">Hardware Gateway</span>
+                    <h3 style="font-family: 'Poppins', sans-serif; font-size: 2em; color: #ffffff; margin-bottom: 0.5em;">
+                        Bi-Directional IoT Telemetry Nodes
+                    </h3>
+                    <p style="color: #a7b5a4; line-height: 1.7; margin-bottom: 1.2em;">
+                        Each solar producer connects via an encrypted Cabo telemetry node. It measures clean kilowatt-hours generated, power factor, temperature, and local irradiance.
+                    </p>
+                    <ul style="list-style-type: none; padding: 0; color: #dce7d0;">
+                        <li style="margin-bottom: 0.8em; display: flex; align-items: center; gap: 0.6em;">
+                            <span class="material-symbols-outlined" style="color: #4ade80;">check_circle</span>
+                            15-minute cryptographically signed meter telemetry
+                        </li>
+                        <li style="margin-bottom: 0.8em; display: flex; align-items: center; gap: 0.6em;">
+                            <span class="material-symbols-outlined" style="color: #4ade80;">check_circle</span>
+                            Zero manual reporting or unverifiable spreadsheets
+                        </li>
+                        <li style="margin-bottom: 0.8em; display: flex; align-items: center; gap: 0.6em;">
+                            <span class="material-symbols-outlined" style="color: #4ade80;">check_circle</span>
+                            Anti-tampering sensors with immediate disconnect fail-safes
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 320px; text-align: center;">
+                    <img src="images/gadgets.webp" alt="IoT Gateway Telemetry" style="max-width: 100%; border-radius: 12px; border: 1px solid #263328; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Testimonials / Stakeholder Feedback Div -->
+        <div id="testimonials-div">
+            <div class="div-title">
+                <span class="div-subtitle-tag">Community & Industry Feedback</span>
+                <h2>What Stakeholders Say About CABO</h2>
+                <p>Real experiences from solar owners, corporate ESG officers, and clean-tech partners.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "CABO enabled us to monetize our 50 kW factory rooftop solar for the first time. The 96% payout goes straight into our account every Monday with zero paperwork."
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="images/avatar4.png" alt="Rupesh Chawla" height="55" width="55">
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Rupesh Chawla</span>
+                            <span class="reviewer-title">Manufacturing Director, Ludhiana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "The transparency of the telemetry audit table gives our ESG board total confidence. We retired 250 tCO₂e knowing exactly which rooftops generated the energy."
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="images/avatar5.png" alt="Aishwarya Sen" height="55" width="55">
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Aishwarya Sen</span>
+                            <span class="reviewer-title">Chief Sustainability Officer, Tata Group</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote">
+                        "As a rooftop solar installer, integrating CABO’s gateway into our residential projects gives our customers an immediate secondary revenue stream."
+                    </p>
+                    <div class="reviewer-info">
+                        <img src="images/avatar6.png" alt="Kavita Rao" height="55" width="55">
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Kavita Rao</span>
+                            <span class="reviewer-title">Clean Energy EPC Founder, Pune</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div id="cta-div">
+            <h2>Experience Verified Climate Telemetry</h2>
+            <p>Access our live marketplace of certified carbon credits or inspect our live telemetry monitor.</p>
+            <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap;">
+                <a href="credits.html" class="button-primary large-button">Browse Carbon Credits</a>
+                <a href="weekly-report.html" class="button-secondary large-button">View 7-Day Audit</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script to load features dynamically from data/features.json -->
+    <script src="js/features.js"></script>
+
+</body>
+</html>
+

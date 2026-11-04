@@ -1,0 +1,33 @@
+[
+  {
+    "icon": "solar_power",
+    "title": "Distributed Solar Aggregation",
+    "desc": "We aggregate kilowatt-scale residential and commercial rooftop solar producers into institutional-grade verified carbon offset batches."
+  },
+  {
+    "icon": "verified",
+    "title": "Real-Time Telemetry & Verification",
+    "desc": "Smart IoT telemetry gateways transmit meter readings every 15 minutes, ensuring tamper-proof audit trails and preventing greenwashing."
+  },
+  {
+    "icon": "percent",
+    "title": "Transparent 4% Gateway Fee",
+    "desc": "Cabo is strictly a clearing gateway. 96% of net carbon revenue goes directly to rooftop owners, while Cabo retains only a 4% clearing fee."
+  },
+  {
+    "icon": "account_balance_wallet",
+    "title": "Automated Weekly Settlement",
+    "desc": "Energy generation is verified weekly and converted into instant financial payouts credited directly into rooftop solar producers' bank accounts."
+  },
+  {
+    "icon": "insights",
+    "title": "Corporate ESG Compliance",
+    "desc": "Corporate buyers purchase verifiable Scope 2 and Scope 3 carbon credits with complete provenance, generation curves, and audit reports."
+  },
+  {
+    "icon": "bolt",
+    "title": "Grid Decarbonization",
+    "desc": "By incentivizing decentralized renewable generation, Cabo accelerates national net-zero goals and strengthens localized distribution grids."
+  }
+]
+

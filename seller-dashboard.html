@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Seller Live Telemetry Console - CABO</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="seller-dashboard.html" class="active-page">Monitor</a></li>
+                    <li><a href="weekly-report.html">Audit Report</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="credits.html">Marketplace</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="refreshTelemetryBtn" class="button-primary" style="font-size: 0.85em; padding: 0.5em 1em;">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.1em; margin-right: 4px;">autorenew</span>
+                    Ping Node
+                </button>
+                <a href="login.html" class="button-outline">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <div style="margin-bottom: 2em; padding-bottom: 1.5em; border-bottom: 1px solid #233025; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1em;">
+                <div>
+                    <span class="div-subtitle-tag" id="nodeIdBadge">CABO / NODE MP-0247</span>
+                    <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.2em; color: #ffffff;">Rooftop Solar Telemetry Monitor</h1>
+                    <p style="color: #9cb098;">Location: Bhopal, Madhya Pradesh | Rated Capacity: 10.5 kWp Inverter</p>
+                </div>
+                <div>
+                    <span class="badge-verified" style="font-size: 0.9em; padding: 6px 14px;">
+                        ● Gateway Node Active (15m Interval)
+                    </span>
+                </div>
+            </div>
+
+            <!-- Primary Telemetry Cards -->
+            <div class="metric-cards-grid">
+                <div class="metric-card">
+                    <p>Current Solar Output</p>
+                    <h2 id="solarOutput">5.17 kW</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Today's Generation</p>
+                    <h2>
+                        <span id="todaysEnergy">24.8 kWh</span>
+                        <span class="delta">+8.4%</span>
+                    </h2>
+                </div>
+                <div class="metric-card">
+                    <p>CO₂ Avoided Today</p>
+                    <h2 id="co2Avoided">18.7 kg</h2>
+                </div>
+            </div>
+
+            <!-- Visual Generation Curve -->
+            <div class="graph-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1em;">
+                    <h3 style="margin: 0;">Live Generation Curve (Today: 06:00 - 18:00)</h3>
+                    <span style="color: #8fa08c; font-size: 0.85em;">Peak Irradiance: 5.4 hrs</span>
+                </div>
+
+                <div class="graph-bars">
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 15%;"></div>
+                        <span class="graph-label">06:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 38%;"></div>
+                        <span class="graph-label">08:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 72%;"></div>
+                        <span class="graph-label">10:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 96%; background: #4ade80;"></div>
+                        <span class="graph-label">12:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 85%;"></div>
+                        <span class="graph-label">14:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 52%;"></div>
+                        <span class="graph-label">16:00</span>
+                    </div>
+                    <div class="graph-bar-col">
+                        <div class="graph-bar" style="height: 18%;"></div>
+                        <span class="graph-label">18:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Carbon & Financial Metrics -->
+            <div class="metric-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="metric-card">
+                    <p>Daily Carbon Credits</p>
+                    <h2 id="dailyCredits">0.0187 CC</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Month to Date Credits</p>
+                    <h2 id="monthToDate">0.428 CC</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Clean Energy Saved</p>
+                    <h2 id="cleanEnergySaved">571 kWh</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Electricity Bill Saved</p>
+                    <h2 id="billSavings">₹4,282</h2>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3em 0;">
+                <a href="weekly-report.html" class="button-primary large-button" style="margin-right: 1em;">
+                    View Detailed 7-Day Audit Table →
+                </a>
+                <a href="settlement.html" class="button-secondary large-button">
+                    Open Settlement Calculator
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script for Seller Live Console -->
+    <script src="js/seller-dashboard.js"></script>
+
+</body>
+</html>

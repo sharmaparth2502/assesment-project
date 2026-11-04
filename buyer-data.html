@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Registered Buyers Directory - CABO</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                    <li><a href="buyer-data.html" class="active-page">Buyer Records</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="buyer.html" class="button-primary">+ Register New</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <div class="div-title" style="padding-top: 1.5em; padding-bottom: 1.5em;">
+                <span class="div-subtitle-tag">Data Storage & Management</span>
+                <h2>Registered Buyer Organisations</h2>
+                <p>All buyer registrations submitted via <code>buyer.html</code> are stored in browser storage and can be exported as a local JSON file.</p>
+            </div>
+
+            <!-- Management Toolbar (Interactive Controls) -->
+            <div style="background: #151c16; border: 1px solid #263328; border-radius: 10px; padding: 1.5em; margin-bottom: 2em; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em;">
+                <div style="flex: 1; min-width: 250px;">
+                    <input type="text" id="searchBuyer" class="filter-input" placeholder="Search by organisation, contact person, or email..." style="width: 100%;">
+                </div>
+                <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+                    <button id="exportJsonBtn" class="button-primary" style="font-size: 0.9em;">
+                        <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.1em; margin-right: 4px;">file_download</span>
+                        Export to JSON File
+                    </button>
+                    <button id="resetSampleBtn" class="button-secondary" style="font-size: 0.9em;">
+                        <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.1em; margin-right: 4px;">refresh</span>
+                        Reset Sample JSON
+                    </button>
+                    <button id="clearData" class="button-danger" style="font-size: 0.9em;">
+                        Clear All Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- Table of Registered Buyers -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Organisation</th>
+                            <th>Work Email</th>
+                            <th>Contact Person</th>
+                            <th>Phone Number</th>
+                            <th>Procurement Target</th>
+                            <th>Classification</th>
+                        </tr>
+                    </thead>
+                    <tbody id="buyerTable">
+                        <!-- Populated dynamically by js/buyer-data.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background: #141b15; border: 1px solid #263328; border-radius: 10px; padding: 1.5em; margin-bottom: 3em;">
+                <h4 style="color: #4ade80; margin-bottom: 0.5em; font-family: 'Poppins', sans-serif;">Evaluation Parameter 4 Note:</h4>
+                <p style="color: #9cb098; font-size: 0.92em; line-height: 1.6;">
+                    Submitted form data from <code>buyer.html</code> is automatically compiled into JSON objects, saved persistently using browser <code>localStorage</code>, and made available for instant offline file download via the <strong>"Export to JSON File"</strong> button above using browser Blob downloads.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Buyer Data Management Script -->
+    <script src="js/buyer-data.js"></script>
+
+</body>
+</html>

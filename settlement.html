@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Gateway Settlement & Fee Calculator - CABO</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html" class="active-page">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="seller-dashboard.html" class="button-secondary">Seller Monitor</a>
+                <a href="buyer.html" class="button-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <div class="div-title">
+                <span class="div-subtitle-tag">03 / GATEWAY COMMISSION & CLEARING</span>
+                <h2>We Are a Gateway — Not a Carbon Credit Reseller</h2>
+                <p>
+                    CABO clears verified rooftop-solar credits transparently. Ownership stays directly with the generator until financial settlement.
+                </p>
+            </div>
+
+            <!-- 96% / 4% Split Visualization -->
+            <div class="split-container" style="max-width: 680px; margin: 0 auto 2.5em auto;">
+                <div class="split-box split-owner">
+                    <h2>96%</h2>
+                    <p>ROOFTOP GENERATOR / NET PAYOUT</p>
+                </div>
+                <div class="split-box split-fee">
+                    <h2>4%</h2>
+                    <p>CABO / CLEARING GATEWAY FEE</p>
+                </div>
+            </div>
+
+            <!-- Interactive Settlement Calculator (Evaluation Parameters 2 & 4) -->
+            <div class="settlement-card">
+                <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5em; color: #ffffff; margin-bottom: 0.3em; text-align: center;">
+                    Interactive Settlement Calculator
+                </h3>
+                <p style="text-align: center; color: #8fa08c; font-size: 0.9em; margin-bottom: 2em;">
+                    Adjust the parameters below to compute real-time clearing values.
+                </p>
+
+                <!-- Inputs -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="calcCredits">Carbon Credits (tCO₂e)</label>
+                        <input type="number" id="calcCredits" value="12.5" step="0.5" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="calcPrice">Clearing Price (₹ per tCO₂e)</label>
+                        <input type="number" id="calcPrice" value="1480" step="50" min="100">
+                    </div>
+                </div>
+
+                <!-- Live Calculated Breakdown -->
+                <div style="background: #0e130f; border: 1px solid #233025; border-radius: 8px; padding: 1.5em; margin: 1.5em 0;">
+                    <div class="calc-row">
+                        <span style="color: #9cb098;">Gross Value</span>
+                        <strong id="calcGross" style="color: #ffffff;">₹18,500</strong>
+                    </div>
+                    <div class="calc-row">
+                        <span style="color: #9cb098;">CABO Gateway Fee (4%)</span>
+                        <strong id="calcFee" style="color: #cbd5e1;">₹740</strong>
+                    </div>
+                    <div class="calc-row calc-total">
+                        <span>Net Rooftop Owner Payout (96%)</span>
+                        <strong id="calcPayout">₹17,760</strong>
+                    </div>
+                </div>
+
+                <button id="generateNoteBtn" class="button-primary full-width-button large-button">
+                    GENERATE SETTLEMENT NOTE →
+                </button>
+
+                <!-- Settlement Note Output Container -->
+                <div id="noteOutput" style="display: none;"></div>
+
+            </div>
+
+            <!-- 3-Step Clearing Pipeline -->
+            <div style="margin-top: 4em; margin-bottom: 4em;">
+                <div class="div-title" style="padding-top: 1em; padding-bottom: 2em;">
+                    <span class="div-subtitle-tag">Verification Standard</span>
+                    <h2>Automated Clearing Workflow</h2>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">verified_user</span>
+                        <h3>01. VERIFY</h3>
+                        <p>Inverter generation data is cryptographically cross-verified with local meteorological solar irradiance indexes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">dataset</span>
+                        <h3>02. AGGREGATE</h3>
+                        <p>Distributed residential and commercial installations are bundled into standard metric tonne CO₂e settlement tranches.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">payments</span>
+                        <h3>03. MONETIZE</h3>
+                        <p>Capital from corporate ESG buyers is settled within 72 hours, with 96% wired directly to generator accounts.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Settlement Calculator Script -->
+    <script src="js/settlement.js"></script>
+
+</body>
+</html>
