@@ -1,5 +1,4 @@
 # CABO — Decentralized Rooftop Solar Carbon Gateway
-**Web Development Course Assessment — 2nd Evaluation**
 
 CABO is a climate-tech front-end web application developed for college assessment. It connects distributed rooftop solar energy producers with sustainability-conscious enterprises looking for verified, high-integrity carbon credits.
 
@@ -124,7 +123,7 @@ assesment-project-main/
 
 ---
 
-## JavaScript Concepts & Difficulty Level
+## JavaScript Concepts
 
 The JavaScript has been written specifically to match the syllabus and difficulty level demonstrated in **EduVerse**:
 
@@ -138,39 +137,7 @@ The JavaScript has been written specifically to match the syllabus and difficult
 
 ---
 
-## How to Test the 2nd Evaluation Parameters
 
-1. **Test Form Submission & JSON File Saving**:
-   - Open `buyer.html` in any web browser.
-   - Fill in the form fields (or modify existing sample inputs) and click **"Register Account & Save to JSON File →"**.
-   - Notice that browser validation runs.
-   - Upon successful submission, your browser will **automatically download a JSON file** (`cabo_buyer_[company].json`) containing the exact submitted data.
-   - You will then be redirected to `buyer-dashboard.html`.
-
-2. **Test Buyer Records & Manual JSON Export**:
-   - Navigate to `buyer-data.html`.
-   - The newly registered organisation appears in the table.
-   - Type in the search box to filter results in real-time.
-   - Click **"Export to JSON File"** to download the complete buyer directory as `cabo_registered_buyers.json`.
-
-3. **Test Interactive Credits Marketplace**:
-   - Open `credits.html`.
-   - Use the search bar to search for "Punjab" or "Solar Canopy".
-   - Select a state from the dropdown to filter projects.
-   - Click **"Buy 10 CC"** on any card: notice the alert confirmation, credit deduction, and transaction recording.
-
-4. **Test Interactive Settlement Calculator**:
-   - Open `settlement.html`.
-   - Change the "Carbon Credits" input or "Clearing Price" input.
-   - Notice that Gross Value, CABO Fee (4%), and Owner Payout (96%) recalculate immediately on keystroke.
-   - Click **"GENERATE SETTLEMENT NOTE →"** and click **"Download Settlement Note as JSON"**.
-
-5. **Test Role-Based Login**:
-   - Open `login.html`.
-   - To test Buyer access: `buyer@cabo.demo` / `demo123` → redirects to `buyer-dashboard.html`.
-   - To test Seller access: `seller@cabo.demo` / `demo123` → redirects to `seller-dashboard.html`.
-
----
 
 ## Author
 **Parth Sharma**  
