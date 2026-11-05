@@ -1,122 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CABO - Buyer Registration</title>
-    <link rel="stylesheet" href="buyerstyle.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Buyer Registration - CABO</title>
+</head>
 <body>
 
-    <div class="top">
-        <div class="logo">CABO</div>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
 
-        <div class="nav">
-            <a href="index.html">LOGIN</a>
-            <a href="buyer.html">BUYER</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="button-secondary">Login</a>
+                <a href="buyer.html" class="button-primary active-page">Register</a>
+            </div>
         </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <div class="div-title" style="padding-top: 1.5em; padding-bottom: 1.5em;">
+                <span class="div-subtitle-tag">Enterprise Access</span>
+                <h2>Buyer Organisation Registration</h2>
+                <p>Register your corporate entity to purchase verified solar carbon credits and meet ESG compliance targets.</p>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <h2>Create Buyer Account</h2>
+                <p class="subtitle">Complete the form below. Submitted data will be validated, saved to browser storage, and generated as a local JSON file.</p>
+
+                <!-- Feedback banner for JS validation messages -->
+                <div id="formFeedback" class="form-feedback"></div>
+
+                <form id="buyerForm" novalidate>
+                    
+                    <!-- Organisation & Email -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Organisation Name *</label>
+                            <input type="text" id="company" name="company" placeholder="e.g. Tata Power ESG Solutions" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" placeholder="procure@enterprise.com" required>
+                        </div>
+                    </div>
+
+                    <!-- Contact Person & Phone -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact">Contact Person Name *</label>
+                            <input type="text" id="contact" name="contact" placeholder="Full name of representative" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (10 digits) *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="98XXXXXXXX" maxlength="10" required>
+                        </div>
+                    </div>
+
+                    <!-- Password & Target -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Account Password (min 6 chars) *</label>
+                            <input type="password" id="password" name="password" placeholder="Create secure password" minlength="6" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="target">Procurement Target (tCO₂e) *</label>
+                            <input type="text" id="target" name="target" placeholder="e.g. 10,000 tCO₂e" value="10,000 tCO₂e" required>
+                        </div>
+                    </div>
+
+                    <!-- Company Type -->
+                    <div class="form-group">
+                        <label for="companyType">Company Classification *</label>
+                        <select id="companyType" name="companyType" required>
+                            <option value="">Select company type</option>
+                            <option value="Public Limited Company">Public Limited Company</option>
+                            <option value="Private Limited Company">Private Limited Company</option>
+                            <option value="Renewable Energy Cooperative">Renewable Energy Cooperative</option>
+                            <option value="CleanTech Startup">CleanTech Startup</option>
+                            <option value="Institutional Investor">Institutional Investor</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Terms & Conditions Checkbox -->
+                    <div class="form-group" style="margin-top: 1em;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the CABO Gateway Protocol terms, telemetry verification standards, and privacy policy.</span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group" style="margin-top: 1.5em;">
+                        <input type="submit" value="Register Account & Save to JSON File →" class="button-primary full-width-button large-button">
+                    </div>
+
+                </form>
+
+                <p class="form-footer-text">
+                    Already registered? <a href="login.html">Login to Portal</a> | 
+                    <a href="buyer-data.html">View Registered Buyers Directory</a>
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="register-page">
-        <div class="register-box">
-
-            <p class="small">CABO NETWORK / BUYER ACCESS</p>
-
-            <h1>BUYER REGISTRATION</h1>
-
-            <p>Register your organisation to explore carbon credits.</p>
-
-            <form id="buyerForm">
-
-                <label>Organisation</label>
-                <input type="text" id="company"
-                       placeholder="Company name" required>
-
-                <label>Work Email</label>
-                <input type="email" id="email"
-                       value="buyer@cabo.demo" required>
-
-                <label>Contact Person Name</label>
-                <input type="text" id="contact"
-                       placeholder="Enter contact person name" required>
-
-                <label>Phone Number</label>
-                <input type="tel" id="phone"
-                    placeholder="Enter 10-digit mobile number"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    required>
-
-                <label>Password</label>
-                <input type="password" id="password"
-                       minlength="6" required>
-
-                <label>Procurement Target</label>
-                <input type="text" id="target"
-                       value="10,000 tCO₂e" required>
-
-                <label>Company Type</label>
-                <select id="companyType" required>
-                    <option value="">Select company type</option>
-                    <option value="Private Company">Private Company</option>
-                    <option value="Public Company">Public Company</option>
-                    <option value="Startup">Startup</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <div class="check">
-                    <input type="checkbox" id="terms" required>
-                    <span>I agree to the CABO terms and conditions.</span>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
                 </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
 
-                <button type="submit">REGISTER ACCOUNT →</button>
-
-            </form>
-
-            <p class="register">
-                Already registered?
-                <a href="index.html">Go to Login</a>
-            </p>
-
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <script>
-        const form = document.getElementById("buyerForm");
-
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const buyer = {
-                company: document.getElementById("company").value,
-                email: document.getElementById("email").value,
-                password: document.getElementById("password").value,
-                contact: document.getElementById("contact").value,
-                phone: document.getElementById("phone").value,
-                target: document.getElementById("target").value,
-                companyType: document.getElementById("companyType").value
-            };
-            
-            let buyers = JSON.parse(localStorage.getItem("buyers")) || [];
-
-            let existingBuyer = buyers.find(function(item) {
-                return item.email.toLowerCase() === buyer.email.toLowerCase();
-            });
-
-            if (existingBuyer) {
-                alert("This email is already registered!");
-                return;
-            }
-
-            buyers.push(buyer);
-
-            localStorage.setItem("buyers", JSON.stringify(buyers));
-
-
-            alert("Buyer registration submitted successfully!");
-
-            window.location.href = "index.html";
-        });
-    </script>
+    <!-- Form Validation & JSON Saving Script -->
+    <script src="js/buyer.js"></script>
 
 </body>
 </html>

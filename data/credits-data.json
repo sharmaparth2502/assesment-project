@@ -1,0 +1,71 @@
+{
+  "credits": [
+    {
+      "id": 1,
+      "source": "Ludhiana Industrial Rooftop Solar Cluster",
+      "location": "Punjab, India",
+      "type": "Industrial Rooftop",
+      "available": 500,
+      "price": 850,
+      "priceDisplay": "₹850 / CC",
+      "status": "Verified",
+      "image": "images/home.webp"
+    },
+    {
+      "id": 2,
+      "source": "Gurugram Tech Park Solar Canopy",
+      "location": "Haryana, India",
+      "type": "Commercial Microgrid",
+      "available": 750,
+      "price": 820,
+      "priceDisplay": "₹820 / CC",
+      "status": "Verified",
+      "image": "images/green.webp"
+    },
+    {
+      "id": 3,
+      "source": "Okhla Clean Energy Rooftop Cooperative",
+      "location": "Delhi NCR, India",
+      "type": "Cooperative Solar",
+      "available": 300,
+      "price": 900,
+      "priceDisplay": "₹900 / CC",
+      "status": "Verified",
+      "image": "images/newsimg.jpg"
+    },
+    {
+      "id": 4,
+      "source": "Pune Education Campus Rooftop Array",
+      "location": "Maharashtra, India",
+      "type": "Institutional",
+      "available": 620,
+      "price": 810,
+      "priceDisplay": "₹810 / CC",
+      "status": "Verified",
+      "image": "images/gadgets.webp"
+    },
+    {
+      "id": 5,
+      "source": "Ahmedabad Logistics Hub Solar Roof",
+      "location": "Gujarat, India",
+      "type": "Warehousing & Logistics",
+      "available": 920,
+      "price": 790,
+      "priceDisplay": "₹790 / CC",
+      "status": "Verified",
+      "image": "images/home.webp"
+    },
+    {
+      "id": 6,
+      "source": "Bengaluru Green Tech Labs Solar Array",
+      "location": "Karnataka, India",
+      "type": "Research & Tech",
+      "available": 450,
+      "price": 860,
+      "priceDisplay": "₹860 / CC",
+      "status": "Verified",
+      "image": "images/green.webp"
+    }
+  ]
+}
+

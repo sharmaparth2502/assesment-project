@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Carbon Credits Marketplace - CABO</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html" class="active-page">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html">Buyer Portal</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="button-secondary">Login</a>
+                <a href="buyer.html" class="button-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <!-- Div Title -->
+            <div class="div-title">
+                <span class="div-subtitle-tag">Live Marketplace</span>
+                <h2>Browse Available Carbon Credits</h2>
+                <p>Every credit represents 1 tonne of verified avoided CO₂e directly logged from certified rooftop solar telemetry nodes.</p>
+            </div>
+
+            <!-- Marketplace Filter Bar (Parameter 2: Interactive Filtering) -->
+            <div class="marketplace-filter">
+                <input type="text" id="searchCredits" class="filter-input" placeholder="Search by solar project, city, or facility type...">
+                <select id="filterLocation" class="filter-select">
+                    <option value="">All Regions / States</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="delhi">Delhi NCR</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="karnataka">Karnataka</option>
+                </select>
+                <a href="buyer-dashboard.html" class="button-secondary" style="padding: 0.75em 1.2em;">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.1em; margin-right: 4px;">dashboard</span>
+                    My Portfolio
+                </a>
+            </div>
+
+            <!-- Dynamic Credits Grid (Populated from data/credits-data.json via js/credits.js) -->
+            <div class="credits-grid">
+                <!-- Javascript will render cards dynamically here -->
+            </div>
+
+            <!-- Explanatory Trust Card -->
+            <div style="background: #141b15; border: 1px solid #263328; border-radius: 12px; padding: 2.5em; margin-bottom: 3em;">
+                <div style="display: flex; flex-wrap: wrap; gap: 2em; align-items: center;">
+                    <div style="flex: 1.5; min-width: 280px;">
+                        <h3 style="font-family: 'Poppins', sans-serif; color: #ffffff; margin-bottom: 0.5em; font-size: 1.5em;">
+                            How Credit Retirement & Certificate Issuance Works
+                        </h3>
+                        <p style="color: #a7b5a4; line-height: 1.6;">
+                            When your organisation procures credits through CABO, the units are immediately retired on the decentralized ledger. A tamper-proof cryptographic Certificate of Avoided Emissions is issued, containing exact GPS coordinates and node telemetry serials for your ESG audit.
+                        </p>
+                    </div>
+                    <div style="flex: 1; min-width: 240px; text-align: center;">
+                        <a href="buyer.html" class="button-primary large-button" style="width: 100%;">
+                            Register Organisation Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div id="cta-div">
+            <h2>Are You a Solar Power Producer?</h2>
+            <p>Connect your rooftop system to the CABO Gateway and monetize your verified clean generation every week.</p>
+            <a href="seller-dashboard.html" class="button-secondary large-button">Access Producer Monitor</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script for Credits Marketplace -->
+    <script src="js/credits.js"></script>
+
+</body>
+</html>
+

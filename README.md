@@ -1,73 +1,144 @@
-# CABO — Web Development Assessment
+# CABO — Decentralized Rooftop Solar Carbon Gateway
 
-CABO is a front-end web development project created as part of my college assessment. It is a demo platform that connects rooftop solar energy producers with organisations interested in carbon credits.
+CABO is a climate-tech front-end web application developed for college assessment. It connects distributed rooftop solar energy producers with sustainability-conscious enterprises looking for verified, high-integrity carbon credits.
 
-The project is developed using HTML, CSS, and basic JavaScript concepts covered during the Web Development course.
+The project structure, layout conventions, and modularity have been modeled directly on the best-practice design patterns of **EduVerse**, organized cleanly into dedicated subfolders (`css/`, `data/`, `images/`, `js/`), while preserving CABO's sleek climate-tech identity.
 
-## Features
+---
 
-- Separate login and registration navigation for buyers.
-- Common login page for both buyers and sellers.
-- Buyer registration form with input validation.
-- JavaScript form submission and event handling.
-- Buyer registration details stored in browser `localStorage`.
-- Buyer data page to display registered buyer details in a table.
-- Buyer dashboard showing available carbon credits and purchase history.
-- Demo purchase functionality for carbon credits.
-- Buyer-specific transaction history using browser storage.
-- Seller dashboard displaying solar generation and carbon-related information.
-- JSON data fetching to display credit and solar information.
-- Weekly report and settlement pages.
-- Separate CSS files for individual pages.
+## 2nd Evaluation Parameters Checklist
 
-## Project Pages
+| # | Evaluation Parameter | Implementation Status & Details |
+|---|---|---|
+| **1** | **Additional pages implemented & linked together** | **Completed (10 Pages)**: `index.html` (Homepage/Hero), `features.html`, `credits.html` (Marketplace), `buyer.html` (Registration), `login.html`, `buyer-dashboard.html`, `buyer-data.html`, `seller-dashboard.html`, `weekly-report.html`, `settlement.html`. All interconnected with unified header navigation and footer. |
+| **2** | **JavaScript Interactions built** | **Completed**: Dynamic JSON fetching (`fetch()`), real-time credit search and region filtering, interactive settlement calculator with live input recalculation, demo credit purchase with real-time balance deductions, ping/refresh telemetry simulation. |
+| **3** | **Forms submission & input validation** | **Completed**: `buyer.html` registration and `login.html` form handlers using `event.preventDefault()`, comprehensive client-side validation (email format, 10-digit phone regex, min-length password, required fields, terms checkbox) with inline feedback UI. |
+| **4** | **Saving submitted form data to local JSON files** | **Completed**: Upon registration form submission in `buyer.html`, the validated data is compiled into a JSON object, stored in browser `localStorage`, and **automatically downloaded to the user's computer as a physical `.json` file** (`cabo_buyer_[company].json`) using browser Blob downloads. An **"Export to JSON File"** button is also available on `buyer-data.html` and `buyer-dashboard.html`. |
 
-| File | Description |
-|---|---|
-| `index.html` | Common login page for buyers and sellers |
-| `buyer.html` | Buyer registration form |
-| `buyer-dashboard.html` | Buyer dashboard with available credits and transaction history |
-| `buyer-data.html` | Displays registered buyer details stored in the browser |
-| `seller-dashboard.html` | Seller dashboard showing solar generation information |
-| `weekly-report.html` | Displays weekly solar generation and audit information |
-| `settlement.html` | Shows the settlement process and commission details |
+---
 
-## Data Files
+## Project Structure (Modeled after EduVerse)
 
-| File | Purpose |
-|---|---|
-| `credits-data.json` | Contains sample carbon credit project details, locations, available credits, and prices |
-| `solar-data.json` | Contains sample solar generation and carbon-related data for the seller dashboard |
+```text
+assesment-project-main/
+│
+├── css/
+│   └── style.css               # Central stylesheet (Universal reset, header, buttons, cards, forms, tables, footer)
+│
+├── data/
+│   ├── buyers.json             # Sample registered corporate buyers database
+│   ├── credits-data.json       # Carbon credit projects, locations, prices, available CC
+│   ├── features.json           # Platform architecture and technological features
+│   └── solar-data.json         # Real-time solar inverter telemetry and metrics
+│
+├── images/
+│   ├── cabo_logo.png           # Official CABO brand logo
+│   ├── flow.webp               # Solar-to-carbon telemetry workflow illustration
+│   ├── gadgets.webp            # IoT gateway meter and telemetry hardware
+│   ├── green.webp              # Renewable energy landscape
+│   ├── healthy.webp            # Environmental health illustration
+│   ├── home.webp               # Residential rooftop solar installation
+│   ├── newsimg.jpg             # Spotlight industrial rooftop project photo
+│   ├── google.webp, micro.webp # Enterprise partner logos
+│   ├── adobe.webp, pin.webp    # Enterprise partner logos
+│   ├── avatar1.png - 6.png     # Reviewer and stakeholder avatars
+│   └── *.svg                   # Social and feature SVG icons
+│
+├── js/
+│   ├── buyer.js                # Form validation, submission handling, local JSON file export
+│   ├── buyer-dashboard.js      # Portfolio metric counters, credit procurement, transaction table
+│   ├── buyer-data.js           # Directory table rendering, search filtering, clear data, JSON export
+│   ├── credits.js              # Marketplace card rendering, search & region filter, quick buy
+│   ├── features.js             # Dynamic card generation from data/features.json
+│   ├── login.js                # Role-based credential verification and redirection
+│   ├── seller-dashboard.js     # Solar telemetry rendering from data/solar-data.json
+│   └── settlement.js           # Live 96/4 split calculator, settlement note & JSON export
+│
+├── buyer-dashboard.html        # Buyer portal (balance, transactions, available batches)
+├── buyer-data.html             # Registered buyers directory & JSON export hub
+├── buyer.html                  # Organisation registration form with validation
+├── credits.html                # Carbon credits marketplace with search & filtering
+├── features.html               # Platform architecture, technology & stakeholder reviews
+├── index.html                  # Main landing page with hero, statistics & enterprise partners
+├── login.html                  # Role-based authentication (Buyer & Seller portals)
+├── seller-dashboard.html       # Producer live console with telemetry & generation curve
+├── settlement.html             # 96/4 clearing model and interactive settlement calculator
+├── weekly-report.html          # 7-day telemetry audit report with cryptographic checksum
+└── README.md                   # Assessment documentation
+```
 
-JavaScript `fetch()` is used to read data from these JSON files and display it on the respective pages.
+---
 
-## Technologies Used
+## Project Pages Overview
 
-- **HTML** — Page structure, forms, tables, and navigation.
-- **CSS** — Page layouts, styling, and visual design.
-- **JavaScript** — Form validation, event handling, DOM manipulation, and browser storage.
-- **JSON** — Separate storage of sample project and solar data.
-- **localStorage** — Storing buyer registration details, login information, and demo transaction history in the browser.
-- **GitHub Pages** — Hosting the static website.
+1. **`index.html` (Homepage)**:
+   - Hero banner highlighting decentralized solar aggregation and the 96/4 clearing model.
+   - Live telemetry and impact statistics banner (10.5 kWp, 99.8% concordance, 96% owner share, 4% gateway fee).
+   - Three-tier workflow breakdown illustrated with `flow.webp`, `home.webp`, `gadgets.webp`, and `green.webp`.
+   - Enterprise carbon buyer credibility showcase (Google, Microsoft, Adobe, Pinterest).
+   - Spotlight showcase of the Ludhiana Industrial Rooftop Cluster.
 
-## Data Storage and Limitations
+2. **`features.html` (Platform Architecture)**:
+   - Dynamic cards loaded from `data/features.json` via `js/features.js`.
+   - Technical breakdown of bi-directional IoT telemetry nodes.
+   - Stakeholder testimonials with profile avatars (`avatar4.png`, `avatar5.png`, `avatar6.png`).
 
-This project is currently a front-end demonstration.
+3. **`credits.html` (Carbon Credits Marketplace)**:
+   - Dynamic project card generation from `data/credits-data.json` via `js/credits.js`.
+   - Real-time text search and region/state filter dropdown.
+   - Instant "Buy 10 CC" interaction that logs transactions to `localStorage` and updates available balances.
 
-- Buyer registration details and demo transaction records are stored in the browser's `localStorage`.
-- JSON files are used to provide sample credit and solar data to the web pages.
-- Changes made during demo purchases are not permanently saved to the JSON files.
-- Data stored in `localStorage` is specific to the browser and website origin.
-- The seller login uses demo credentials and does not provide real authentication.
-- The project does not currently include an actual payment gateway or backend database.
-- Passwords are stored in browser storage for demonstration purposes only and should not be used for real user accounts.
+4. **`buyer.html` (Organisation Registration)**:
+   - Clean form layout with fields for Organisation, Work Email, Contact Person, Phone (10 digits), Password, Target, Classification, and Terms agreement.
+   - Handled by `js/buyer.js` with client-side validation, duplicate check, browser storage, and **automatic local JSON file creation and download**.
 
-A backend using Node.js and Express, along with proper authentication and server-side data storage, can be added as a future improvement.
+5. **`login.html` (Secure Console Access)**:
+   - Role-based login supporting registered buyers and demo seller accounts.
+   - Quick-reference credentials box for evaluation testing.
 
-## Project Status
+6. **`buyer-dashboard.html` (Buyer Portfolio Portal)**:
+   - Displays buyer greeting, available credits, purchased credits, and target goal.
+   - Available projects procurement table with live buy buttons.
+   - Dynamic transaction history table with "Export Transactions to JSON File" option.
 
-This project is a work in progress and is being developed further as part of the Web Development Assessment.
+7. **`buyer-data.html` (Registered Buyers Directory)**:
+   - Table displaying all registered buyers.
+   - Live search filter by name, company, or email.
+   - "Export to JSON File" button allowing manual export of all registered buyers at any time.
+   - Reset sample data button loading from `data/buyers.json`.
+
+8. **`seller-dashboard.html` (Producer Telemetry Console)**:
+   - Solar telemetry loaded dynamically from `data/solar-data.json`.
+   - Hourly generation curve chart visualization (06:00 to 18:00).
+   - "Ping Node" button for simulated real-time telemetry fluctuations.
+
+9. **`weekly-report.html` (7-Day Telemetry Audit)**:
+   - Complete 7-day telemetry audit log with daily generation, CO₂ avoided, and VERIFIED badges.
+   - Cryptographic SHA-256 gateway checksum.
+
+10. **`settlement.html` (Gateway Settlement & Calculator)**:
+    - Transparent visual explanation of the 96% generator / 4% CABO clearing split.
+    - Interactive Settlement Calculator: dynamically calculates Gross Amount, CABO Fee, and Net Owner Payout as inputs change.
+    - "Generate Settlement Note" button with option to download the note as a JSON file.
+
+---
+
+## JavaScript Concepts
+
+The JavaScript has been written specifically to match the syllabus and difficulty level demonstrated in **EduVerse**:
+
+1. **`fetch()` API with Promises**: Used in `features.js`, `credits.js`, `seller-dashboard.js`, and `buyer-dashboard.js` to load external `.json` files.
+2. **DOM Manipulation**: `document.getElementById()`, `document.querySelector()`, `document.createElement()`, `innerHTML`, `appendChild()`.
+3. **Array Methods & Loops**: `for` loops, `.forEach()`, `.filter()`, `.find()`.
+4. **Event Handling**: `addEventListener()` for `submit`, `click`, `input`, and `change` events.
+5. **Form Validation & Regex**: Checking non-empty fields, email regex patterns, and 10-digit phone patterns.
+6. **Browser Storage (`localStorage`)**: `localStorage.setItem()` and `JSON.parse(localStorage.getItem())` for persistent client-side data.
+7. **JSON File Export (`Blob` API)**: Generating and downloading offline `.json` files directly from browser JavaScript without requiring a backend server.
+
+---
+
+
 
 ## Author
-
-**Parth Sharma**
+**Parth Sharma**  
+Web Development Assessment Project

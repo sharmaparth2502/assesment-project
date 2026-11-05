@@ -1,0 +1,1169 @@
+/* ========================================================== */
+/* CABO - Clean Climate & Rooftop Solar Carbon Gateway         */
+/* External Stylesheet (Structured identically to EduVerse)   */
+/* ========================================================== */
+
+/* Universal Styles & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Google Font: Lato (for body text) */
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #0f1411;
+    color: #f1f5ee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page content wrapper for all pages */
+#page-content {
+    width: 100%;
+    flex: 1;
+}
+
+.page-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5em 1.5em;
+}
+
+/* Header and Navigation */
+.site-header {
+    background-color: #141b15;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-bottom: 1px solid #253127;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.6em;
+}
+
+.logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+#logo-text {
+    /* Google Font: Poppins (for headings) */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.logo-badge {
+    background-color: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    margin-left: 1.8em;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #c5cec3;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid transparent;
+    transition-property: color, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.main-navigation a:hover {
+    color: #4ade80;
+}
+
+.main-navigation a.active-page {
+    color: #4ade80;
+    border-bottom-color: #4ade80;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Minimal Header for login/signup */
+.minimal-header {
+    background-color: #141b15;
+    border-bottom: 1px solid #253127;
+}
+
+/* Buttons */
+.button-primary {
+    display: inline-block;
+    background-color: #22c55e;
+    color: #0b1c0e;
+    text-decoration: none;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition-property: background-color, transform, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+}
+
+.button-primary:hover {
+    background-color: #16a34a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+}
+
+.button-secondary {
+    display: inline-block;
+    background-color: #1e2720;
+    color: #dce7d0;
+    text-decoration: none;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95em;
+    border: 1px solid #364438;
+    cursor: pointer;
+    transition-property: background-color, transform, border-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+}
+
+.button-secondary:hover {
+    background-color: #28342b;
+    border-color: #4ade80;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.button-outline {
+    display: inline-block;
+    background: transparent;
+    color: #4ade80;
+    border: 1px solid #4ade80;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button-outline:hover {
+    background: rgba(74, 222, 128, 0.1);
+    color: #ffffff;
+}
+
+.button-danger {
+    background-color: #7f1d1d;
+    color: #fecaca;
+    border: 1px solid #991b1b;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button-danger:hover {
+    background-color: #991b1b;
+    color: #ffffff;
+}
+
+.full-width-button {
+    width: 100%;
+}
+
+.large-button {
+    padding: 1em 2em;
+    font-size: 1.1em;
+}
+
+/* General Content Styles */
+.div-title {
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.div-title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.3em;
+    color: #ffffff;
+    margin-bottom: 0.4em;
+}
+
+.div-title p {
+    font-size: 1.1em;
+    color: #a7b3a4;
+    line-height: 1.6;
+}
+
+.div-subtitle-tag {
+    display: inline-block;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4ade80;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #232d25;
+    margin: 3.5em 0;
+}
+
+/* Hero Section */
+#hero-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4em 2em;
+    gap: 3.5em;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero-tag {
+    font-size: 0.85em;
+    letter-spacing: 2.5px;
+    color: #4ade80;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2em;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 0.6em;
+}
+
+.hero-content h1 span.highlight {
+    color: #4ade80;
+}
+
+.hero-content p {
+    font-size: 1.15em;
+    color: #b5c2b2;
+    margin-bottom: 2em;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid #28352b;
+}
+
+/* Trusted Companies / Enterprise Buyers Section */
+#trusted-div {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3em 1em;
+}
+
+#trusted-div h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    color: #8c9b89;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2.5em;
+}
+
+.companies-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+    padding: 0.8em 1.5em;
+    background: #141b15;
+    border-radius: 8px;
+    border: 1px solid #222d24;
+}
+
+.company-logo:hover {
+    opacity: 1;
+    border-color: #4ade80;
+}
+
+.company-logo img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.company-logo span {
+    font-size: 1em;
+    font-weight: 700;
+    color: #dce7d0;
+}
+
+/* Impact Metrics / Stats Grid */
+.stats-banner {
+    background-color: #141b15;
+    border-top: 1px solid #232d25;
+    border-bottom: 1px solid #232d25;
+    padding: 3em 1.5em;
+    margin: 2em 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2em;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #4ade80;
+    font-weight: 700;
+}
+
+.stat-item p {
+    color: #9eb09a;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2em;
+    max-width: 1180px;
+    margin: 0 auto 4em auto;
+    padding: 0 1.5em;
+}
+
+.feature-card {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    padding: 2.2em;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: #4ade80;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.feature-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35em;
+    color: #ffffff;
+    margin-bottom: 0.6em;
+}
+
+.feature-card p {
+    color: #a7b5a4;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Carbon Credits Marketplace / Grid */
+.marketplace-filter {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-bottom: 2.5em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-input {
+    flex: 2;
+    min-width: 200px;
+    background: #0f1410;
+    border: 1px solid #334235;
+    color: #ffffff;
+    padding: 0.75em 1em;
+    border-radius: 6px;
+    font-size: 0.95em;
+}
+
+.filter-input:focus, .filter-select:focus {
+    outline: none;
+    border-color: #4ade80;
+}
+
+.filter-select {
+    flex: 1;
+    min-width: 150px;
+    background: #0f1410;
+    border: 1px solid #334235;
+    color: #ffffff;
+    padding: 0.75em 1em;
+    border-radius: 6px;
+    font-size: 0.95em;
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2em;
+    margin-bottom: 4em;
+}
+
+.credit-card {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-card:hover {
+    transform: translateY(-4px);
+    border-color: #4ade80;
+}
+
+.credit-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #263328;
+}
+
+.credit-card-body {
+    padding: 1.5em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-tag {
+    display: inline-block;
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 0.8em;
+    width: fit-content;
+}
+
+.credit-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    color: #ffffff;
+    margin-bottom: 0.4em;
+}
+
+.credit-location {
+    color: #9cb098;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    margin-bottom: 1.2em;
+}
+
+.credit-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+    border-top: 1px solid #253127;
+    margin-top: auto;
+}
+
+.credit-price {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.credit-price span {
+    font-size: 0.7em;
+    font-weight: 400;
+    color: #8fa08c;
+}
+
+/* Tables */
+.table-container {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1.5em 0 3em 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+table th {
+    background-color: #1c251e;
+    color: #dce7d0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 1em 1.2em;
+    border-bottom: 1px solid #2d3b2f;
+    letter-spacing: 0.5px;
+}
+
+table td {
+    padding: 1em 1.2em;
+    border-bottom: 1px solid #202a22;
+    color: #e4ebe1;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover td {
+    background-color: #1a231b;
+}
+
+.badge-verified {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    display: inline-block;
+}
+
+.badge-pending {
+    background-color: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    display: inline-block;
+}
+
+/* Forms (EduVerse layout) */
+.form-container {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 12px;
+    padding: 2.5em;
+    max-width: 680px;
+    margin: 0 auto 3em auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-container {
+    max-width: 460px;
+}
+
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3em 1.5em;
+    min-height: 80vh;
+}
+
+.form-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 0.3em;
+}
+
+.form-container p.subtitle {
+    color: #a7b5a4;
+    font-size: 0.95em;
+    margin-bottom: 2em;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 1.2em;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2em;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #dce7d0;
+    margin-bottom: 0.5em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: #0d120e;
+    border: 1px solid #324134;
+    color: #ffffff;
+    padding: 0.8em 1em;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4ade80;
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 0.9em;
+    color: #c7d4c4;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #22c55e;
+}
+
+.form-feedback {
+    padding: 0.8em 1.2em;
+    border-radius: 6px;
+    margin-top: 1.2em;
+    font-size: 0.9em;
+    display: none;
+}
+
+.form-feedback.success {
+    display: block;
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.form-feedback.error {
+    display: block;
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.form-footer-text {
+    text-align: center;
+    color: #9cb098;
+    font-size: 0.9em;
+    margin-top: 1.5em;
+}
+
+.form-footer-text a {
+    color: #4ade80;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Summary / Metric Cards */
+.metric-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5em;
+    margin: 2em 0;
+}
+
+.metric-card {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-card p {
+    color: #9cb098;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5em;
+}
+
+.metric-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+}
+
+.metric-card .delta {
+    font-size: 0.8em;
+    color: #4ade80;
+    font-weight: 700;
+}
+
+/* Dashboard Graph Simulation */
+.graph-container {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.graph-container h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    color: #ffffff;
+    margin-bottom: 1.5em;
+}
+
+.graph-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 180px;
+    padding-top: 1em;
+    border-bottom: 1px solid #334436;
+    gap: 1em;
+}
+
+.graph-bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.graph-bar {
+    width: 70%;
+    background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.6s ease;
+}
+
+.graph-label {
+    font-size: 0.75em;
+    color: #8c9e89;
+    margin-top: 0.6em;
+}
+
+/* Interactive Settlement Calculator */
+.settlement-card {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 12px;
+    padding: 2.5em;
+    max-width: 680px;
+    margin: 2em auto;
+}
+
+.split-container {
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+.split-box {
+    flex: 1;
+    padding: 1.5em;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.split-owner {
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.split-fee {
+    background: rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.split-box h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.split-owner h2 {
+    color: #4ade80;
+}
+
+.split-fee h2 {
+    color: #cbd5e1;
+}
+
+.split-box p {
+    font-size: 0.85em;
+    color: #a7b8a4;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85em 0;
+    border-bottom: 1px solid #253327;
+    font-size: 1.05em;
+}
+
+.calc-total {
+    padding-top: 1.2em;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2em;
+    max-width: 1180px;
+    margin: 0 auto 4em auto;
+    padding: 0 1.5em;
+}
+
+.testimonial-card {
+    background-color: #151c16;
+    border: 1px solid #263328;
+    border-radius: 10px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quote {
+    font-style: italic;
+    color: #dce7d0;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.reviewer-info img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4ade80;
+}
+
+.reviewer-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+}
+
+.reviewer-title {
+    font-size: 0.85em;
+    color: #8c9e89;
+}
+
+/* Call to Action Banner */
+#cta-div {
+    text-align: center;
+    padding: 5em 2em;
+    background: linear-gradient(180deg, #141b15 0%, #0f1410 100%);
+    border-top: 1px solid #253127;
+}
+
+#cta-div h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
+
+#cta-div p {
+    color: #a7b5a4;
+    font-size: 1.15em;
+    max-width: 650px;
+    margin: 0 auto 2em auto;
+}
+
+/* Footer (Structured identically to EduVerse) */
+.site-footer {
+    background-color: #0b0f0c;
+    border-top: 1px solid #1f2720;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid #1a221b;
+}
+
+.footer-about {
+    flex: 1.5;
+    min-width: 260px;
+}
+
+.footer-about .logo {
+    margin-bottom: 1em;
+}
+
+.footer-about .tagline {
+    color: #9cb098;
+    font-size: 0.95em;
+    margin-bottom: 1.5em;
+    max-width: 340px;
+}
+
+.social-media {
+    display: flex;
+    gap: 1em;
+}
+
+.social-media a img {
+    height: 24px;
+    width: 24px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    filter: invert(85%) sepia(10%) saturate(200%) hue-rotate(70deg);
+}
+
+.social-media a:hover img {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.link-column h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05em;
+    color: #ffffff;
+    margin-bottom: 1.2em;
+    letter-spacing: 0.5px;
+}
+
+.link-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-column li {
+    margin-bottom: 0.8em;
+}
+
+.link-column a {
+    text-decoration: none;
+    color: #8fa08c;
+    font-size: 0.92em;
+    transition: color 0.2s ease;
+}
+
+.link-column a:hover {
+    color: #4ade80;
+}
+
+.footer-copyright {
+    max-width: 1200px;
+    margin: 2em auto 0 auto;
+    text-align: center;
+    color: #6d7d6a;
+    font-size: 0.85em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 868px) {
+    #hero-div {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2.5em 1.5em;
+    }
+
+    .hero-content h1 {
+        font-size: 2.4em;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .main-navigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .main-navigation li {
+        margin-left: 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .split-container {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+

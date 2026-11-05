@@ -1,226 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CABO - Buyer Dashboard</title>
-    <link rel="stylesheet" href="buyer-dashboardstyle.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Font: Poppins (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Lato (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (for icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Buyer Dashboard - CABO Portal</title>
+</head>
 <body>
 
-    <div class="top">
-        <div class="logo">CABO</div>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/cabo_logo.png" alt="CABO Official Logo">
+                <span id="logo-text">CABO</span>
+                <span class="logo-badge">Gateway</span>
+            </a>
 
-        <div class="nav">
-            <a href="index.html">LOGIN</a>
-            <a href="buyer.html">BUYER</a>
-            <a href="buyer-data.html">BUYER DATA</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="credits.html">Carbon Credits</a></li>
+                    <li><a href="weekly-report.html">Weekly Audit</a></li>
+                    <li><a href="settlement.html">Settlement</a></li>
+                    <li><a href="buyer-dashboard.html" class="active-page">Buyer Portal</a></li>
+                    <li><a href="buyer-data.html">Buyer Records</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="buyer.html" class="button-secondary">Register New</a>
+                <a href="login.html" class="button-outline">Logout</a>
+            </div>
         </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content">
+
+        <div class="page-container">
+
+            <!-- Title & User Welcome -->
+            <div style="margin-bottom: 2em; padding-bottom: 1.5em; border-bottom: 1px solid #233025; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1em;">
+                <div>
+                    <span class="div-subtitle-tag">Portal Console</span>
+                    <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.2em; color: #ffffff;">Buyer Portfolio</h1>
+                    <p style="color: #9cb098;">Welcome, <strong id="buyerName" style="color: #4ade80;">Buyer Representative</strong> (<span id="companyName">Enterprise</span>)</p>
+                </div>
+                <div>
+                    <a href="credits.html" class="button-primary">
+                        + Browse Marketplace
+                    </a>
+                </div>
+            </div>
+
+            <!-- Metric Summary Cards -->
+            <div class="metric-cards-grid">
+                <div class="metric-card">
+                    <p>Total Available Credits</p>
+                    <h2 id="availableCredits">0 CC</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Purchased & Retired</p>
+                    <h2 id="purchasedCredits">0 CC</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Target Goal</p>
+                    <h2 id="buyerTarget">10,000 tCO₂e</h2>
+                </div>
+                <div class="metric-card">
+                    <p>Audit Status</p>
+                    <h2 style="font-size: 1.3em; color: #4ade80; margin-top: 0.3em;">
+                        <span class="badge-verified">Active ESG Certified</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Available Carbon Credits Table -->
+            <div style="margin-top: 3.5em;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1em;">
+                    <div>
+                        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.6em; color: #ffffff;">Available Carbon Credit Batches</h2>
+                        <p style="color: #8fa08c; font-size: 0.9em;">Click 'Procure 10 CC' to test instant demo allocation.</p>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Solar Project</th>
+                                <th>Location</th>
+                                <th>Available Balance</th>
+                                <th>Price per Credit</th>
+                                <th>Instant Allocation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="creditList">
+                            <!-- Populated dynamically by buyer-dashboard.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Transaction History Table -->
+            <div style="margin-top: 3.5em; margin-bottom: 4em;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1em; flex-wrap: wrap; gap: 1em;">
+                    <div>
+                        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.6em; color: #ffffff;">Transaction & Retirement History</h2>
+                        <p style="color: #8fa08c; font-size: 0.9em;">Stored locally in browser storage.</p>
+                    </div>
+                    <div>
+                        <button id="exportTransactionsBtn" class="button-secondary" style="font-size: 0.9em;">
+                            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.1em; margin-right: 4px;">download</span>
+                            Export Transactions as JSON File
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Origin Location</th>
+                                <th>Credits Allocated</th>
+                                <th>Gross Cost</th>
+                                <th>Clearing Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionList">
+                            <!-- Populated dynamically by buyer-dashboard.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="page">
-
-        <p class="small">CABO NETWORK / BUYER PORTAL</p>
-
-        <h1>BUYER DASHBOARD</h1>
-
-        <p>Welcome, <span id="buyerName">Buyer</span></p>
-
-        <div class="summary">
-
-            <div class="box">
-                <p>Available Credits</p>
-                <h2 id="availableCredits">0 CC</h2>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <img src="images/cabo_logo.png" alt="CABO Official Logo" height="40">
+                    <span id="logo-text" style="font-size: 1.4em;">CABO</span>
+                </div>
+                <p class="tagline">Decentralized Rooftop Solar Carbon Clearing Gateway. Turning clean distributed generation into certified climate impact.</p>
+                <div class="social-media">
+                    <a href="#" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon"></a>
+                    <a href="#" target="_blank"><img src="images/github.svg" alt="GitHub Icon"></a>
+                    <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+                    <a href="#" target="_blank"><img src="images/linkedin-copy.svg" alt="LinkedIn Icon"></a>
+                </div>
             </div>
 
-            <div class="box">
-                <p>Purchased Credits</p>
-                <h2 id="purchasedCredits">0 CC</h2>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="credits.html">Carbon Credits</a></li>
+                        <li><a href="settlement.html">Settlement Gateway</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Portals</h3>
+                    <ul>
+                        <li><a href="buyer.html">Buyer Registration</a></li>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="buyer-data.html">Registered Directory</a></li>
+                        <li><a href="seller-dashboard.html">Seller Live Monitor</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h3>Audit & Trust</h3>
+                    <ul>
+                        <li><a href="weekly-report.html">7-Day Telemetry Audit</a></li>
+                        <li><a href="login.html">Secure Console</a></li>
+                        <li><a href="#">Gateway Terms</a></li>
+                        <li><a href="#">Methodology</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="box">
-                <p>Organisation</p>
-                <h2 id="companyName">Not available</h2>
-            </div>
-
         </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 CABO Network. Developed for Web Development Assessment. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <h2>AVAILABLE CARBON CREDITS</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Location</th>
-                    <th>Available</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-
-            <tbody id="creditList"></tbody>
-        </table>
-
-        <h2>TRANSACTION HISTORY</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Credits</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody id="transactionList"></tbody>
-        </table>
-
-    </div>
-
-    <script>
-
-        let buyer = JSON.parse(localStorage.getItem("loggedInBuyer"));
-
-        if (!buyer) {
-            window.location.href = "index.html";
-        }
-
-        else {
-
-            document.getElementById("buyerName").textContent = buyer.contact;
-            document.getElementById("companyName").textContent = buyer.company;
-
-            let transactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
-
-            transactions = transactions.filter(function(item) {
-                return item.buyerEmail === buyer.email;
-            });
-
-            function showTransactions() {
-
-                let transactionList = document.getElementById("transactionList");
-                transactionList.innerHTML = "";
-
-                let total = 0;
-
-                transactions.forEach(function(item) {
-
-                    let row = document.createElement("tr");
-
-                    let project = document.createElement("td");
-                    project.textContent = item.source;
-
-                    let credits = document.createElement("td");
-                    credits.textContent = item.credits + " CC";
-
-                    let status = document.createElement("td");
-                    status.textContent = "Demo Purchase";
-
-                    row.appendChild(project);
-                    row.appendChild(credits);
-                    row.appendChild(status);
-
-                    transactionList.appendChild(row);
-
-                    total = total + item.credits;
-
-                });
-
-                document.getElementById("purchasedCredits").textContent = total + " CC";
-            }
-
-            fetch("credits-data.json")
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(data) {
-
-                    let creditList = document.getElementById("creditList");
-                    let totalCredits = 0;
-
-                    data.credits.forEach(function(item) {
-
-                        let row = document.createElement("tr");
-
-                        let source = document.createElement("td");
-                        source.textContent = item.source;
-
-                        let location = document.createElement("td");
-                        location.textContent = item.location;
-
-                        let available = document.createElement("td");
-                        available.textContent = item.available;
-
-                        let price = document.createElement("td");
-                        price.textContent = item.price;
-
-                        let action = document.createElement("td");
-                        let buyButton = document.createElement("button");
-
-                        buyButton.textContent = "Buy";
-
-                        buyButton.addEventListener("click", function() {
-
-                            let remaining = parseInt(item.available);
-
-                            if (remaining < 10) {
-                                alert("Not enough credits available!");
-                                return;
-                            }
-
-                            item.available = (remaining - 10) + " CC";
-                            available.textContent = item.available;
-
-                            let purchase = {
-                                source: item.source,
-                                credits: 10,
-                                buyerEmail: buyer.email
-                            };
-
-                            transactions.push(purchase);
-
-                            let allTransactions = JSON.parse(localStorage.getItem("buyerTransactions")) || [];
-
-                            allTransactions.push(purchase);
-
-                            localStorage.setItem("buyerTransactions", JSON.stringify(allTransactions));
-
-                            alert("Demo purchase of 10 credits recorded!");
-
-                            showTransactions();
-
-                            document.getElementById("availableCredits").textContent =
-                                (totalCredits - 10) + " CC";
-
-                            totalCredits = totalCredits - 10;
-
-                        });
-
-                        action.appendChild(buyButton);
-
-                        row.appendChild(source);
-                        row.appendChild(location);
-                        row.appendChild(available);
-                        row.appendChild(price);
-                        row.appendChild(action);
-
-                        creditList.appendChild(row);
-
-                        totalCredits = totalCredits + parseInt(item.available);
-
-                    });
-
-                    document.getElementById("availableCredits").textContent = totalCredits + " CC";
-
-                })
-                .catch(function(error) {
-                    console.log("Error loading credit data:", error);
-                });
-
-            showTransactions();
-
-        }
-
-    </script>
+    <!-- Buyer Dashboard Script -->
+    <script src="js/buyer-dashboard.js"></script>
 
 </body>
 </html>

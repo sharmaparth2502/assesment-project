@@ -1,0 +1,16 @@
+{
+  "nodeId": "CABO / NODE MP-0247",
+  "location": "Bhopal, Madhya Pradesh",
+  "capacity": "10.5 kWp",
+  "solarOutput": "5.17 kW",
+  "todaysEnergy": "24.8 kWh",
+  "todaysGrowth": "+8.4%",
+  "co2Avoided": "18.7 kg",
+  "dailyCredits": "0.0187 CC",
+  "monthToDate": "0.428 CC",
+  "cleanEnergySaved": "571 kWh",
+  "billSavings": "₹4,282",
+  "peakHours": "5.6 hrs",
+  "systemHealth": "Optimal"
+}
+
