@@ -60,10 +60,20 @@
         
     });
         document.getElementById("clearData").addEventListener("click", function() {
-        localStorage.removeItem("buyers");
-        table.innerHTML = "";
-        alert("Buyer data cleared successfully!");
-    });
+
+            if (confirm("Are you sure you want to clear all buyer data?")) {
+
+                localStorage.removeItem("buyers");
+                localStorage.removeItem("loggedInBuyer");
+                localStorage.removeItem("buyerTransactions");
+
+                table.innerHTML = "";
+
+                alert("Buyer data cleared successfully!");
+
+            }
+
+});
 </script>
   
 
