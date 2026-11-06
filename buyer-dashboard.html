@@ -133,6 +133,13 @@
                     return response.json();
                 })
                 .then(function(data) {
+                    let savedCredits = JSON.parse(localStorage.getItem("creditInventory"));
+
+                    if (savedCredits) {
+                        data.credits = savedCredits;
+                    } else {
+                      localStorage.setItem("creditInventory", JSON.stringify(data.credits));
+                    }
 
                     let creditList = document.getElementById("creditList");
                     let totalCredits = 0;
@@ -168,6 +175,7 @@
                             }
 
                             item.available = (remaining - 10) + " CC";
+                            localStorage.setItem("creditInventory", JSON.stringify(data.credits));
                             available.textContent = item.available;
 
                             let purchase = {
