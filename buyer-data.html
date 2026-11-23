@@ -8,7 +8,8 @@
 <body>
 
     <h1>Registered Buyers</h1>
-    <button id="clearData">Clear Buyer Data</button>
+
+    <button id="clearData">Clear Local Demo Data</button>
 
     <table border="1">
         <thead>
@@ -26,56 +27,73 @@
     </table>
 
 <script>
-    const buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+
     const table = document.getElementById("buyerTable");
 
-    buyers.forEach(function(buyer) {
-        const row = document.createElement("tr");
-
-        const company = document.createElement("td");
-        company.textContent = buyer.company;
-        row.appendChild(company);
-
-        const email = document.createElement("td");
-        email.textContent = buyer.email;
-        row.appendChild(email);
-
-        const contact = document.createElement("td");
-        contact.textContent = buyer.contact;
-        row.appendChild(contact);
-        
-        const phone = document.createElement("td");
-        phone.textContent = buyer.phone;
-        row.appendChild(phone);
-
-        const target = document.createElement("td");
-        target.textContent = buyer.target;
-        row.appendChild(target);
-
-        const companyType = document.createElement("td");
-        companyType.textContent = buyer.companyType;
-        row.appendChild(companyType);
-
-        table.appendChild(row);
-        
-    });
-        document.getElementById("clearData").addEventListener("click", function() {
-
-            if (confirm("Are you sure you want to clear all buyer data?")) {
-
-                localStorage.removeItem("buyers");
-                localStorage.removeItem("loggedInBuyer");
-                localStorage.removeItem("buyerTransactions");
-
-                table.innerHTML = "";
-
-                alert("Buyer data cleared successfully!");
-
+    // Get Buyers from MongoDB
+    fetch("http://localhost:5000/api/buyers")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Unable to fetch buyer data");
             }
 
-});
+            return response.json();
+        })
+        .then(function(data) {
+
+            data.buyers.forEach(function(buyer) {
+
+                const row = document.createElement("tr");
+
+                const company = document.createElement("td");
+                company.textContent = buyer.company;
+                row.appendChild(company);
+
+                const email = document.createElement("td");
+                email.textContent = buyer.email;
+                row.appendChild(email);
+
+                const contact = document.createElement("td");
+                contact.textContent = buyer.contact;
+                row.appendChild(contact);
+
+                const phone = document.createElement("td");
+                phone.textContent = buyer.phone;
+                row.appendChild(phone);
+
+                const target = document.createElement("td");
+                target.textContent = buyer.procurementTarget;
+                row.appendChild(target);
+
+                const companyType = document.createElement("td");
+                companyType.textContent = buyer.companyType;
+                row.appendChild(companyType);
+
+                table.appendChild(row);
+
+            });
+
+        })
+        .catch(function(error) {
+            console.log("Error loading buyers:", error);
+            alert("Unable to load buyer data. Please check the server.");
+        });
+
+    // Clear Local Demo Data
+    document.getElementById("clearData").addEventListener("click", function() {
+
+        if (confirm("Clear local login and transaction data? MongoDB buyer records will remain safe.")) {
+
+            localStorage.removeItem("loggedInBuyer");
+            localStorage.removeItem("buyerTransactions");
+
+            alert("Local demo data cleared successfully!");
+
+        }
+
+    });
+
 </script>
-  
 
 </body>
 </html>
