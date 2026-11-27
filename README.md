@@ -15,10 +15,11 @@ The frontend and backend are maintained in separate repositories.
 
 - Common login page for buyers and sellers.
 - Buyer registration with form validation.
+- Buyer registration and login integrated with backend APIs.
+- Buyer account details stored in MongoDB.
+- Password hashing using bcrypt on the backend.
 - Buyer and seller dashboards with separate functionality.
-- Buyer registration details stored in browser localStorage.
-- Buyer data displayed in a table.
-- Clear Buyer Data option with a confirmation prompt.
+- Buyer data retrieval through backend API.
 - Available carbon credit projects with prices and locations.
 - Demo credit purchase functionality.
 - Updated credit quantities saved in localStorage.
@@ -47,49 +48,63 @@ The frontend and backend are maintained in separate repositories.
 | `credits-data.json` | Sample carbon credit project details, locations, available credits and prices |
 | `solar-data.json` | Sample solar generation and carbon-related data |
 
-JavaScript `fetch()` is used to retrieve data from these JSON files and display them on the respective web pages.
+JavaScript `fetch()` is used to retrieve data from these JSON files and display it on the respective web pages.
 
 ## Backend
 
 The backend is maintained separately in the [CABO Backend API repository](https://github.com/sharmaparth2502/cabo-backend-api).
 
-Technologies used:
+**Technologies used:**
 
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 - REST API
+- bcrypt
 
-The backend project contains server configuration, database connectivity, API routes, middleware and database models.
+### Buyer API Integration
+
+The frontend communicates with the backend through REST API endpoints.
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/buyers/register` | Registers a new buyer |
+| POST | `/api/buyers/login` | Verifies buyer login credentials |
+| GET | `/api/buyers` | Retrieves registered buyer records |
+
+Buyer registration details are stored in MongoDB through the backend API. Buyer login credentials are verified by the backend, where passwords are hashed using bcrypt.
 
 ## Technologies Used
 
 - **HTML** – Page structure, forms, tables and navigation.
 - **CSS** – Page layouts, styling and visual design.
-- **JavaScript** – Form validation, event handling and DOM manipulation.
+- **JavaScript** – Form validation, event handling, API calls and DOM manipulation.
 - **JSON** – Separate storage of sample credit and solar data.
-- **localStorage** – Browser-side storage for demo data.
-- **Node.js and Express.js** – Backend server and API development.
-- **MongoDB** – Database for backend data storage.
-- **GitHub Pages** – Hosting the static frontend website.
+- **localStorage** – Browser-side storage for demo transactions and credit-related data.
+- **Node.js** – Backend runtime environment.
+- **Express.js** – Backend server and API development.
+- **MongoDB** – Database for buyer account information.
+- **GitHub** – Version control and project hosting.
 
 ## Data Storage and Limitations
 
-- The frontend currently uses browser `localStorage` for buyer registration details and demo transaction records.
-- JSON files provide sample credit and solar data.
+- Buyer registration details are stored in MongoDB through the backend API.
+- Buyer login is handled through the backend API.
+- Sample credit and solar generation information is retrieved from separate JSON files.
+- Demo transaction records and credit-related changes are stored in browser localStorage.
 - Changes made to browser-side credit inventory do not permanently modify the original JSON files.
-- Data stored in `localStorage` is specific to the browser and website origin.
-- Seller login uses demo credentials.
-- The frontend's existing demo login and registration functionality is not yet fully integrated with the backend.
-- The backend is maintained separately and is under development.
+- Data stored in localStorage is specific to the browser and website origin.
+- Seller login and seller dashboard functionality use demo data.
 - The project does not currently include an actual payment gateway.
 - Settlement details are sample values and do not represent actual financial transactions.
 
 ## Project Status
 
-This project is being developed further as part of the Web Development Assessment. Backend development, database integration and frontend-backend connectivity are in progress.
+The frontend includes buyer registration and login integration with the Node.js and Express.js backend using MongoDB.
+
+The project is being developed further as part of the Web Development Assessment. Additional backend functionality, including seller management, carbon credit management and transaction APIs, can be added in future development.
 
 ## Author
 
-**Parth Sharma**
+Parth Sharma
