@@ -81,7 +81,7 @@ Buyer registration details are stored in MongoDB through the backend API. Buyer 
 - **CSS** – Page layouts, styling and visual design.
 - **JavaScript** – Form validation, event handling, API calls and DOM manipulation.
 - **JSON** – Separate storage of sample credit and solar data.
-- **localStorage** – Browser-side storage for demo transactions and credit-related data.
+- **localStorage** – Browser-side storage for logged-in buyer display information, demo transactions and credit-related data.
 - **Node.js** – Backend runtime environment.
 - **Express.js** – Backend server and API development.
 - **MongoDB** – Database for buyer account information.
@@ -95,7 +95,8 @@ Buyer registration details are stored in MongoDB through the backend API. Buyer 
 - Demo transaction records and credit-related changes are stored in browser localStorage.
 - Changes made to browser-side credit inventory do not permanently modify the original JSON files.
 - Data stored in localStorage is specific to the browser and website origin.
-- Seller login and seller dashboard functionality use demo data.
+- Seller login uses demo credentials, while the seller dashboard displays sample solar generation and carbon-related data.
+- The frontend currently communicates with the backend running locally at `http://localhost:5000`. The backend must be running for buyer registration and login to work.
 - The project does not currently include an actual payment gateway.
 - Settlement details are sample values and do not represent actual financial transactions.
 
